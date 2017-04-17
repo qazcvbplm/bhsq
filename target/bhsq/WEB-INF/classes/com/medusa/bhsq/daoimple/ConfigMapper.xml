@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.medusa.bhsq.dao.ConfigMapper" >
+  <resultMap id="BaseResultMap" type="com.medusa.bhsq.entity.Config" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="admin" property="admin" jdbcType="VARCHAR" />
+    <result column="pass" property="pass" jdbcType="VARCHAR" />
+    <result column="simage" property="simage" jdbcType="VARCHAR" />
+    <result column="qimage" property="qimage" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, admin, pass, simage, qimage
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from config
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from config
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.medusa.bhsq.entity.Config" >
+    insert into config (Id, admin, pass, 
+      simage, qimage)
+    values (#{id,jdbcType=INTEGER}, #{admin,jdbcType=VARCHAR}, #{pass,jdbcType=VARCHAR}, 
+      #{simage,jdbcType=VARCHAR}, #{qimage,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.Config" >
+    insert into config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="admin != null" >
+        admin,
+      </if>
+      <if test="pass != null" >
+        pass,
+      </if>
+      <if test="simage != null" >
+        simage,
+      </if>
+      <if test="qimage != null" >
+        qimage,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="admin != null" >
+        #{admin,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null" >
+        #{pass,jdbcType=VARCHAR},
+      </if>
+      <if test="simage != null" >
+        #{simage,jdbcType=VARCHAR},
+      </if>
+      <if test="qimage != null" >
+        #{qimage,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.medusa.bhsq.entity.Config" >
+    update config
+    <set >
+      <if test="admin != null" >
+        admin = #{admin,jdbcType=VARCHAR},
+      </if>
+      <if test="pass != null" >
+        pass = #{pass,jdbcType=VARCHAR},
+      </if>
+      <if test="simage != null" >
+        simage = #{simage,jdbcType=VARCHAR},
+      </if>
+      <if test="qimage != null" >
+        qimage = #{qimage,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.medusa.bhsq.entity.Config" >
+    update config
+    set admin = #{admin,jdbcType=VARCHAR},
+      pass = #{pass,jdbcType=VARCHAR},
+      simage = #{simage,jdbcType=VARCHAR},
+      qimage = #{qimage,jdbcType=VARCHAR}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
