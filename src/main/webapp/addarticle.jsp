@@ -48,6 +48,7 @@
       <section id="main-content" >
           <section class="wrapper" >
               <!-- 数据区段-->
+              <form enctype="multipart/form-data"  action="" method="post">
               <div class="container">
                   <div class="row">
                        <div class="form-group">
@@ -84,6 +85,7 @@
                        <button class="btn btn-success " type="submit">确定</button>
                    </div>
               </div>
+              </form>
               <!-- page end-->
           </section>
       </section>

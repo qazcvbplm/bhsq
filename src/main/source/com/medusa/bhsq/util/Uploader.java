@@ -119,6 +119,8 @@ public class Uploader {
 		} catch (Exception e) {
 			this.state = this.errorInfo.get("UNKNOWN");
 		}
+		
+		
 	}
 	
 	/**
