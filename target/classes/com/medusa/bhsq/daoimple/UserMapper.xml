@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.medusa.bhsq.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.medusa.bhsq.entity.User" >
+    <id column="Id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="head" property="head" jdbcType="VARCHAR" />
+    <result column="ex" property="ex" jdbcType="INTEGER" />
+    <result column="introduction" property="introduction" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="BIT" />
+    <result column="birth" property="birth" jdbcType="VARCHAR" />
+    <result column="wxnumber" property="wxnumber" jdbcType="VARCHAR" />
+    <result column="openid" property="openid" jdbcType="VARCHAR" />
+    <result column="levelid" property="levelid" jdbcType="INTEGER" />
+    <result column="lasttime" property="lasttime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    Id, name, head, ex, introduction, sex, birth, wxnumber, openid, levelid, lasttime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where Id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where Id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.medusa.bhsq.entity.User" >
+    insert into user (Id, name, head, 
+      ex, introduction, sex, 
+      birth, wxnumber, openid, 
+      levelid, lasttime)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{head,jdbcType=VARCHAR}, 
+      #{ex,jdbcType=INTEGER}, #{introduction,jdbcType=VARCHAR}, #{sex,jdbcType=BIT}, 
+      #{birth,jdbcType=VARCHAR}, #{wxnumber,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, 
+      #{levelid,jdbcType=INTEGER}, #{lasttime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        Id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="head != null" >
+        head,
+      </if>
+      <if test="ex != null" >
+        ex,
+      </if>
+      <if test="introduction != null" >
+        introduction,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birth != null" >
+        birth,
+      </if>
+      <if test="wxnumber != null" >
+        wxnumber,
+      </if>
+      <if test="openid != null" >
+        openid,
+      </if>
+      <if test="levelid != null" >
+        levelid,
+      </if>
+      <if test="lasttime != null" >
+        lasttime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="head != null" >
+        #{head,jdbcType=VARCHAR},
+      </if>
+      <if test="ex != null" >
+        #{ex,jdbcType=INTEGER},
+      </if>
+      <if test="introduction != null" >
+        #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=BIT},
+      </if>
+      <if test="birth != null" >
+        #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="wxnumber != null" >
+        #{wxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="levelid != null" >
+        #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="lasttime != null" >
+        #{lasttime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.medusa.bhsq.entity.User" >
+    update user
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="head != null" >
+        head = #{head,jdbcType=VARCHAR},
+      </if>
+      <if test="ex != null" >
+        ex = #{ex,jdbcType=INTEGER},
+      </if>
+      <if test="introduction != null" >
+        introduction = #{introduction,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=BIT},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="wxnumber != null" >
+        wxnumber = #{wxnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="openid != null" >
+        openid = #{openid,jdbcType=VARCHAR},
+      </if>
+      <if test="levelid != null" >
+        levelid = #{levelid,jdbcType=INTEGER},
+      </if>
+      <if test="lasttime != null" >
+        lasttime = #{lasttime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.medusa.bhsq.entity.User" >
+    update user
+    set name = #{name,jdbcType=VARCHAR},
+      head = #{head,jdbcType=VARCHAR},
+      ex = #{ex,jdbcType=INTEGER},
+      introduction = #{introduction,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=BIT},
+      birth = #{birth,jdbcType=VARCHAR},
+      wxnumber = #{wxnumber,jdbcType=VARCHAR},
+      openid = #{openid,jdbcType=VARCHAR},
+      levelid = #{levelid,jdbcType=INTEGER},
+      lasttime = #{lasttime,jdbcType=VARCHAR}
+    where Id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
