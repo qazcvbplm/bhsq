@@ -1,13 +1,35 @@
 package com.medusa.bhsq.entity;
 
-public class Plate {
+import java.io.Serializable;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.jboss.logging.Message;
+
+public class Plate implements Serializable{
     private Integer id;
 
     private String image;
 
+    @Size(min=4,max=20,message="名字长度大于5")
     private String name;
 
+    @NotEmpty(message="排序不能为空")
+    private int sort;
+    
+    @Min(0)
     private Integer visitor;
+    
+    public int getSort() {
+		return sort;
+	}
+
+	public void setSort(int sort) {
+		this.sort = sort;
+	}
+
 
     public Integer getId() {
         return id;

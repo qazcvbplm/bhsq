@@ -50,5 +50,19 @@ function TZH(){
 				filereader.readAsDataURL(fileinput.files[0]);
 			})
 			
-}
+        }
+        	
+	this.previewI=function(obj){
+			var fileinput=document.querySelector("#"+obj.file);
+			var show=document.querySelector("#"+obj.show);
+			
+			fileinput.addEventListener('change',function(){
+				var filereader=new FileReader();
+				filereader.addEventListener("load",function(e){
+					$(show).attr("src",e.target.result);
+				});
+				filereader.readAsDataURL(fileinput.files[0]);
+			})
+			
+        }
 }
