@@ -1,7 +1,0 @@
-<link href="controller/css/bootstrap.min.css" rel="stylesheet">
-<link href="controller/css/style.css" rel="stylesheet">
-<script src="controller/js/jquery.js"></script>
-<script src="controller/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="controller/assets/data-tables/jquery.dataTables.js"></script>
-<script type="text/javascript" src="controller/assets/data-tables/DT_bootstrap.js"></script>
-<script src="controller/js/dynamic-table.js"></script>
