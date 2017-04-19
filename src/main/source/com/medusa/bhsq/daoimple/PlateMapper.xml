@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.medusa.bhsq.dao.plateMapper" >
-  <resultMap id="BaseResultMap" type="com.medusa.bhsq.entity.plate" >
+<mapper namespace="com.medusa.bhsq.dao.PlateMapper" >
+  <resultMap id="BaseResultMap" type="com.medusa.bhsq.entity.Plate" >
     <id column="Id" property="id" jdbcType="INTEGER" />
     <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
@@ -13,21 +13,21 @@
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
-    from plate
+    from Plate
     where Id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from plate
+    delete from Plate
     where Id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.medusa.bhsq.entity.plate" >
-    insert into plate (Id, image, name, 
+  <insert id="insert" parameterType="com.medusa.bhsq.entity.Plate" >
+    insert into Plate (Id, image, name, 
       visitor)
     values (#{id,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{visitor,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.plate" >
-    insert into plate
+  <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.Plate" >
+    insert into Plate
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
         Id,
@@ -57,8 +57,8 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.medusa.bhsq.entity.plate" >
-    update plate
+  <update id="updateByPrimaryKeySelective" parameterType="com.medusa.bhsq.entity.Plate" >
+    update Plate
     <set >
       <if test="image != null" >
         image = #{image,jdbcType=VARCHAR},
@@ -72,8 +72,8 @@
     </set>
     where Id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.medusa.bhsq.entity.plate" >
-    update plate
+  <update id="updateByPrimaryKey" parameterType="com.medusa.bhsq.entity.Plate" >
+    update Plate
     set image = #{image,jdbcType=VARCHAR},
       name = #{name,jdbcType=VARCHAR},
       visitor = #{visitor,jdbcType=INTEGER}

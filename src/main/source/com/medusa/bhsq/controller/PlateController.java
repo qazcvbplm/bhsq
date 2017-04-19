@@ -1,5 +1,7 @@
 package com.medusa.bhsq.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +20,16 @@ public class PlateController {
 	private FileUpDao fileUpDao;
 	@RequestMapping("plateadd")
 	public String plateadd(HttpServletRequest req,Plate p,MultipartFile pic){
-		
+		String rs;
+		try {
+			rs = fileUpDao.up(pic.getOriginalFilename(), "upload/", pic.getInputStream());
+			if(rs!=null)
+			{
+				p.setImage(rs);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return "redirect:platelist.jsp";
 	}
 }
