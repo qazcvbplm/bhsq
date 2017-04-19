@@ -1,17 +1,17 @@
 package com.medusa.bhsq.dao;
 
-import com.medusa.bhsq.entity.Place;
+import com.medusa.bhsq.entity.Plate;
 
-public interface PlaceMapper {
+public interface PlateMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(Place record);
+    int insert(Plate record);
 
-    int insertSelective(Place record);
+    int insertSelective(Plate record);
 
-    Place selectByPrimaryKey(Integer id);
+    Plate selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(Place record);
+    int updateByPrimaryKeySelective(Plate record);
 
-    int updateByPrimaryKey(Place record);
+    int updateByPrimaryKey(Plate record);
 }

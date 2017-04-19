@@ -1,6 +1,6 @@
 package com.medusa.bhsq.entity;
 
-public class Place {
+public class Plate {
     private Integer id;
 
     private String image;
