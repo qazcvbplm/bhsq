@@ -13,7 +13,7 @@ public class User implements Serializable{
 
     private String introduction;
 
-    private Boolean sex;
+    private String sex;
 
     private String birth;
 
@@ -24,8 +24,20 @@ public class User implements Serializable{
     private Integer levelid;
 
     private String lasttime;
+    
+    private Level level;
+    
+    
 
-    public Integer getId() {
+    public Level getLevel() {
+		return level;
+	}
+
+	public void setLevel(Level level) {
+		this.level = level;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -65,15 +77,16 @@ public class User implements Serializable{
         this.introduction = introduction == null ? null : introduction.trim();
     }
 
-    public Boolean getSex() {
-        return sex;
-    }
 
-    public void setSex(Boolean sex) {
-        this.sex = sex;
-    }
+    public String getSex() {
+		return sex;
+	}
 
-    public String getBirth() {
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
+
+	public String getBirth() {
         return birth;
     }
 

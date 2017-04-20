@@ -10,7 +10,7 @@
   <sql id="Base_Column_List" >
     Id, image, number, ex
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="findbyid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from level

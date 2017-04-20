@@ -16,23 +16,38 @@
                           <span>首页</span>
                       </a>
                   </li>
-                 <!--   <li class="sub-menu">
-                      <a href="javascript:;" class="active">
+                <li class="sub-menu">
+                      <a href="javascript:;" >
                           <i class="icon-book"></i>
-                          <span>店铺</span>
+                          <span>板块管理</span>
                           <span class="arrow"></span>
                       </a>
                       <ul class="sub">
-                             <li class="sub-menu" >
-			                     
-			                      <ul class="sub">
-			                          <li><a class="" href="shoplist.do?sid=1">湖北经济学院</a></li>
-			                           <li><a class="" href="shoplist.do?sid=2">江西理工大学</a></li>
-			                      </ul>
-			                  </li>
-                           <li><a class="" href="imagelist.do?type=0">图片管理</a></li>
+			                          <li><a class="" href="platelist.do">板块列表</a></li>
+			                           <li><a class="" href="plateadd.jsp">添加板块</a></li>
                       </ul>
-                  </li> -->
+                  </li> 
+                   <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-book"></i>
+                          <span>文章管理</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+			                          <li><a class="" href="articlelist.do">文章列表</a></li>
+			                           <li><a class="" href="addarticle.jsp">添加文章</a></li>
+                      </ul>
+                  </li> 
+                   <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-book"></i>
+                          <span>用户管理</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+			                          <li><a class="" href="userlist.do">用户列表</a></li>
+                      </ul>
+                  </li> 
                  
               </ul>
               <!-- sidebar menu end-->
