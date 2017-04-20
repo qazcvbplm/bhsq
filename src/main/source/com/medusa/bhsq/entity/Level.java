@@ -1,6 +1,8 @@
 package com.medusa.bhsq.entity;
 
-public class Level {
+import java.io.Serializable;
+
+public class Level implements Serializable{
     private Integer id;
 
     private String image;

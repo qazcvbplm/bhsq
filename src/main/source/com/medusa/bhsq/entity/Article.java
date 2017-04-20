@@ -1,12 +1,13 @@
 package com.medusa.bhsq.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.hibernate.validator.constraints.Length;
 
-public class Article {
+public class Article implements Serializable{
     private Integer id;
 
     @Length(min=10,message="标题长度应不能太短")
@@ -20,7 +21,7 @@ public class Article {
 
     private Integer type;
 
-    private Date time;
+    private String time;
 
     private String sort;
 
@@ -28,8 +29,28 @@ public class Article {
     @Length(min=40,message="文章内容长度太短")
     private String text;
     
+    private Plate plate;
     
-    private List<String> imagelist=new ArrayList<String>();
+    private Article article;
+    
+    
+    public Plate getPlate() {
+		return plate;
+	}
+
+	public void setPlate(Plate plate) {
+		this.plate = plate;
+	}
+
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+
+	private List<String> imagelist=new ArrayList<String>();
     
     
 
@@ -89,16 +110,17 @@ public class Article {
         this.type = type;
     }
 
-    public Date getTime() {
-        return time;
-    }
-
-    public void setTime(Date time) {
-        this.time = time;
-    }
 
     
-    public String getSort() {
+    public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getSort() {
 		return sort;
 	}
 

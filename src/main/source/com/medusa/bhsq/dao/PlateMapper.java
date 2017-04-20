@@ -11,7 +11,7 @@ public interface PlateMapper {
 
     int insertSelective(Plate record);
 
-    Plate selectByPrimaryKey(Integer id);
+    Plate findbyid(Integer id);
 
     int updateByPrimaryKeySelective(Plate record);
 

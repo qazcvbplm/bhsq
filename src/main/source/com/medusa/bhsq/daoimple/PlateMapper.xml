@@ -11,7 +11,7 @@
   <sql id="Base_Column_List" >
     Id, image, name, visitor,sort
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="findbyid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     *
     from Plate

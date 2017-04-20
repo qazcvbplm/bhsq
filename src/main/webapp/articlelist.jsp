@@ -67,7 +67,7 @@ transform:scale(3,3);
                               <th style="width:8px;"><input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" /></th>
                               <th class="hidden-phone">封面图</th>
                               <th class="hidden-phone">标题</th>
-                              <th class="hidden-phone" id="sort">所属板块</th>
+                              <th class="hidden-phone" >所属板块</th>
                               <th class="hidden-phone">访问量</th>
                               <th class="hidden-phone">操作</th>
                           </tr>
@@ -77,11 +77,15 @@ transform:scale(3,3);
                           <c:forEach var="t" items="${sessionScope.alist}">
                           <tr class="odd gradeX" id="cla${t.id}">
                                <td><input type="checkbox" class="checkboxes" value="1" /></td>
-                               <td><img class="fd img-circle" height="50px" width="50px" src="http://112.74.110.66:8080/upload/${t.image}"></td>
-                               <td>${t.name}</td>
-                                <td id="sort${t.id}">${t.sort}</td>
+                               <td>
+                               <c:forEach var="im" items="${t.imagelist}">
+                               <img class="fd" height="100px" width="100px" src="${im}">
+                               </c:forEach>
+                               </td>
+                               <td>${t.title}</td>
+                                <td>${t.plate.name}</td>
                                 <th class="hidden-phone">${t.visitor}</th>
-                               <td class="hidden-phone"><a class="btn btn-success" href="">编辑</a>&nbsp;<a class="btn btn-danger" onclick="delet(${t.id})">删除</a></td>
+                               <td class="hidden-phone"><a class="btn btn-success" href="findbyid.do?id=${t.id }&type=${t.type}">编辑</a>&nbsp;<a class="btn btn-danger" onclick="delet(${t.id})">删除</a></td>
                           </tr>
                           </c:forEach>
                           </tbody>
@@ -147,7 +151,7 @@ function mt()
   function dele(){
 	  alert(zid);
 	  $.ajax({
-		  url:'platedelete.do?id='+zid,
+		  url:'articledelete.do?id='+zid,
 		  dataType:'json',
 		  success:function(res){
 			  it.slideUp('10');

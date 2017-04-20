@@ -1,5 +1,7 @@
 package com.medusa.bhsq.dao;
 
+import java.util.List;
+
 import com.medusa.bhsq.entity.Article;
 
 public interface ArticleMapper {
@@ -9,11 +11,13 @@ public interface ArticleMapper {
 
     int insertSelective(Article record);
 
-    Article selectByPrimaryKey(Integer id);
+    Article findbyid(Integer id);
 
     int updateByPrimaryKeySelective(Article record);
 
     int updateByPrimaryKeyWithBLOBs(Article record);
 
     int updateByPrimaryKey(Article record);
+    
+    List<Article> findbytype(int type);
 }

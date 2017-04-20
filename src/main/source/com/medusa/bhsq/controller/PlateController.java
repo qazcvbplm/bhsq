@@ -88,7 +88,7 @@ public class PlateController {
 	 */
 	@RequestMapping("plateupdatef")
 	public String plateupdatef(HttpServletRequest req,int id){
-		req.getSession().setAttribute("plate", plateMapper.selectByPrimaryKey(id));
+		req.getSession().setAttribute("plate", plateMapper.findbyid(id));
 		return "redirect:plateeditor.jsp";
 	}
 	

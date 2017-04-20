@@ -20,10 +20,10 @@ public class FileUp {
 			   request.getSession().setAttribute("error", "图片格式不正确");
 			   return null;
 		   }
-		   String newname="u"+new SimpleDateFormat("yyyyMMddhhmmss").format(new Date())+postfix;
+		   String newname="u"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+postfix;
 		   String path=request.getSession().getServletContext().getRealPath("/");
 		  // path="C:\\Users\\Administrator.hi\\Desktop\\Desktop\\hslp\\WebContent\\controller";//"C:\\Users\\Administrator\\Desktop\\wschool\\WebContent\\controller";
-	       path+=dirname;
+	       path+="/"+dirname;
 		   File temp=new File(path);
 		   File temp2=new File(path+"/"+newname);
 		   if(!temp.exists())
@@ -55,10 +55,10 @@ public class FileUp {
 			   request.getSession().setAttribute("error", "图片格式不正确");
 			   return null;
 		   }
-		   String newname="u"+new SimpleDateFormat("yyyyMMddhhmmss").format(new Date())+"-"+s+postfix;
+		   String newname="u"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+"-"+s+postfix;
 		   String path=request.getSession().getServletContext().getRealPath("/");
 		  // path="C:\\Users\\Administrator.hi\\Desktop\\Desktop\\hslp\\WebContent\\controller";//"C:\\Users\\Administrator\\Desktop\\wschool\\WebContent\\controller";
-	       path+=dirname;
+	       path+="/"+dirname;
 		   File temp=new File(path);
 		   File temp2=new File(path+"/"+newname);
 		   if(!temp.exists())

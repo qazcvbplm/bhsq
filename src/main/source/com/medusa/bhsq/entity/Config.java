@@ -1,6 +1,8 @@
 package com.medusa.bhsq.entity;
 
-public class Config {
+import java.io.Serializable;
+
+public class Config implements Serializable{
     private Integer id;
 
     private String admin;
