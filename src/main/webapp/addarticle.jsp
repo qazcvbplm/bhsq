@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8" %>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -48,7 +49,7 @@
       <section id="main-content" >
           <section class="wrapper" >
               <!-- 数据区段-->
-              <form enctype="multipart/form-data"  action="" method="post">
+              <form enctype="multipart/form-data"  action="articleadd.do" method="post">
               <div class="container">
                   <div class="row">
                        <div class="form-group">
@@ -57,14 +58,32 @@
                        </div>
                   </div>
                    <div class="row">
+                       <div class="form-group">
+                           <label class="control-label">所属板块</label>
+                           <select class="form-control" name="parent" ></select>
+                       </div>
+                  </div>
+                  <div class="row">
+                       <div class="form-group">
+                           <label class="control-label">访问量</label>
+                           <input class="form-control" name="visitor" >
+                       </div>
+                  </div>
+                    <div class="row">
+                       <div class="form-group">
+                           <label class="control-label">排序</label>
+                           <input class="form-control" name="sort" >
+                       </div>
+                  </div>
+                   <div class="row">
                          <div class="col-md-12">
                            <label class="control-label">封面图</label>
                            </div>
                   </div> 
                   <div class="row" >
-                           <input type="file" id="image1" name="image" style="display:none">
-                           <input type="file"  id="image2" name="image"  style="display:none">
-                           <input type="file"  id="image3" name="image"  style="display:none">
+                           <input type="file" id="image1" name="pic" style="display:none">
+                           <input type="file"  id="image2" name="pic"  style="display:none">
+                           <input type="file"  id="image3" name="pic"  style="display:none">
                            <div class="col-md-4 " >
                            <center><div  id="show1" onclick="select(this)"  style="width:200px;height:200px;background:url('./img/add_btn.jpg');background-size:100% 100%;" ></div></center>
                            </div>
@@ -155,6 +174,19 @@
              $("#image3").click();
     	 
      }
+     
+     $(document).ready(function(){
+    	 $.ajax({
+    		 url:'platelistajax.do',
+    		 dataType:'json',
+    		 success:function(data){
+    			 for(var i=0;i<data.length;i++)
+    			{
+    			     	 $("select").append("<option value='"+data[i].id+"'>"+data[i].name+"</option>");
+    			}
+    		 }
+    	 })
+     })
      
      </script>
      

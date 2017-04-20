@@ -8,8 +8,9 @@
     <result column="userid" property="userid" jdbcType="INTEGER" />
     <result column="type" property="type" jdbcType="INTEGER" />
     <result column="time" property="time"  />
-    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="sort" property="sort"  />
     <result column="parent" property="parent" jdbcType="INTEGER" />
+     <result column="image" property="image" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.medusa.bhsq.entity.Article" extends="BaseResultMap" >
     <result column="text" property="text" jdbcType="LONGVARCHAR" />
@@ -35,74 +36,14 @@
   <insert id="insert" parameterType="com.medusa.bhsq.entity.Article" >
     insert into article (Id, title, visitor, 
       userid, type, time, 
-      sort, parent, text
+      sort, parent, text,image
       )
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{visitor,jdbcType=INTEGER}, 
       #{userid,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}, 
-      #{sort,jdbcType=INTEGER}, #{parent,jdbcType=INTEGER}, #{text,jdbcType=LONGVARCHAR}
+      #{sort}, #{parent,jdbcType=INTEGER}, #{text,jdbcType=LONGVARCHAR},#{image}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.Article" >
-    insert into article
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        Id,
-      </if>
-      <if test="title != null" >
-        title,
-      </if>
-      <if test="visitor != null" >
-        visitor,
-      </if>
-      <if test="userid != null" >
-        userid,
-      </if>
-      <if test="type != null" >
-        type,
-      </if>
-      <if test="time != null" >
-        time,
-      </if>
-      <if test="sort != null" >
-        sort,
-      </if>
-      <if test="parent != null" >
-        parent,
-      </if>
-      <if test="text != null" >
-        text,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="title != null" >
-        #{title,jdbcType=VARCHAR},
-      </if>
-      <if test="visitor != null" >
-        #{visitor,jdbcType=INTEGER},
-      </if>
-      <if test="userid != null" >
-        #{userid,jdbcType=INTEGER},
-      </if>
-      <if test="type != null" >
-        #{type,jdbcType=INTEGER},
-      </if>
-      <if test="time != null" >
-        #{time,jdbcType=TIMESTAMP},
-      </if>
-      <if test="sort != null" >
-        #{sort,jdbcType=INTEGER},
-      </if>
-      <if test="parent != null" >
-        #{parent,jdbcType=INTEGER},
-      </if>
-      <if test="text != null" >
-        #{text,jdbcType=LONGVARCHAR},
-      </if>
-    </trim>
-  </insert>
+ 
   <update id="updateByPrimaryKeySelective" parameterType="com.medusa.bhsq.entity.Article" >
     update article
     <set >
@@ -122,13 +63,16 @@
         time = #{time,jdbcType=TIMESTAMP},
       </if>
       <if test="sort != null" >
-        sort = #{sort,jdbcType=INTEGER},
+        sort = #{sort},
       </if>
       <if test="parent != null" >
         parent = #{parent,jdbcType=INTEGER},
       </if>
       <if test="text != null" >
         text = #{text,jdbcType=LONGVARCHAR},
+      </if>
+       <if test="image != null" >
+        image = #{image},
       </if>
     </set>
     where Id = #{id,jdbcType=INTEGER}

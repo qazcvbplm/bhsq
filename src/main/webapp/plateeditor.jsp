@@ -54,7 +54,7 @@ alert('${error}');
       <section id="main-content" >
           <section class="wrapper" >
               <!-- 数据区段-->
-              <form enctype="multipart/form-data"  action="plateadd.do" method="post">
+              <form enctype="multipart/form-data"  action="plateupdate.do" method="post">
               <div class="container">
                    <div class="row">
                          <div class="col-md-12">
@@ -62,27 +62,29 @@ alert('${error}');
                            </div>
                   </div> 
                   <div class="row" >
+                   <input type="text"  name="id" value="${plate.id}" style="display:none">
+                               <input type="text"  name="image" value="${plate.image}" style="display:none">
                            <input type="file" id="image1" name="pic" style="display:none">
                            <div class="col-md-12">
-                           <center><div id="show1" onclick="select(this)" style="width:200px;height:200px;background:url('./img/add_btn.jpg');background-size:100% 100%;" ></div></center>
+                           <center><div id="show1" onclick="select(this)" style="width:200px;height:200px;background:url('http://112.74.110.66:8080/upload/${plate.image}');background-size:100% 100%;" ></div></center>
                            </div>
                   </div>
                   <div class="row">
                        <div class="form-group">
                            <label class="control-label">板块名</label>
-                           <input class="form-control" name="name" >
+                           <input class="form-control" name="name" value="${plate.name}">
                        </div>
                   </div>
                    <div class="row">
                        <div class="form-group">
                            <label class="control-label">排序号</label>
-                           <input class="form-control" name="sort" >
+                           <input class="form-control" name="sort" value="${plate.sort}">
                        </div>
                   </div>
                    <div class="row">
                        <div class="form-group">
                            <label class="control-label">访问量</label>
-                           <input class="form-control" name="visitor" >
+                           <input class="form-control" name="visitor" value="${plate.visitor}">
                        </div>
                   </div>
                    <h1></h1>

@@ -2,6 +2,9 @@ package com.medusa.bhsq.util;
 
 public class Result {
 	public static final int SUCCESS=1;
+	public static final int ARTICLE=1;
+	public static final int REPLACE=2;
+	public static final int REPLACE_REPLACE=3;
 	public static final int ERROR=0;
     public static final int SHOP_OPEN=1;
     public static final int SHOP_CLOSE=0;

@@ -16,22 +16,23 @@ public class Plate implements Serializable{
     @Size(min=4,max=20,message="名字长度大于5")
     private String name;
 
-    @NotEmpty(message="排序不能为空")
-    private int sort;
+    @NotEmpty(message="排序号为空")
+    private String sort;
     
     @Min(0)
     private Integer visitor;
     
-    public int getSort() {
+
+
+    public String getSort() {
 		return sort;
 	}
 
-	public void setSort(int sort) {
+	public void setSort(String sort) {
 		this.sort = sort;
 	}
 
-
-    public Integer getId() {
+	public Integer getId() {
         return id;
     }
 

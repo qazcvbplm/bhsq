@@ -1,13 +1,20 @@
 package com.medusa.bhsq.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import org.hibernate.validator.constraints.Length;
 
 public class Article {
     private Integer id;
 
+    @Length(min=10,message="标题长度应不能太短")
     private String title;
+    
+    private String image;
 
-    private Integer visitor;
+    private Integer visitor=0;
 
     private Integer userid;
 
@@ -15,13 +22,34 @@ public class Article {
 
     private Date time;
 
-    private Integer sort;
+    private String sort;
 
     private Integer parent;
-
+    @Length(min=40,message="文章内容长度太短")
     private String text;
+    
+    
+    private List<String> imagelist=new ArrayList<String>();
+    
+    
 
-    public Integer getId() {
+    public List<String> getImagelist() {
+		return imagelist;
+	}
+
+	public void setImagelist(List<String> imagelist) {
+		this.imagelist = imagelist;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public Integer getId() {
         return id;
     }
 
@@ -69,15 +97,16 @@ public class Article {
         this.time = time;
     }
 
-    public Integer getSort() {
-        return sort;
-    }
+    
+    public String getSort() {
+		return sort;
+	}
 
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
+	public void setSort(String sort) {
+		this.sort = sort;
+	}
 
-    public Integer getParent() {
+	public Integer getParent() {
         return parent;
     }
 

@@ -6,56 +6,29 @@
     <result column="image" property="image" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
     <result column="visitor" property="visitor" jdbcType="INTEGER" />
+    <result column="sort" property="sort" />
   </resultMap>
   <sql id="Base_Column_List" >
-    Id, image, name, visitor
+    Id, image, name, visitor,sort
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
-    <include refid="Base_Column_List" />
+    *
     from Plate
     where Id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="findall" resultMap="BaseResultMap">
+      select * from plate
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from Plate
+    delete from plate
     where Id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.medusa.bhsq.entity.Plate" >
-    insert into Plate (Id, image, name, 
-      visitor)
+    insert into plate (Id, image, name, 
+      visitor,sort)
     values (#{id,jdbcType=INTEGER}, #{image,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
-      #{visitor,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.Plate" >
-    insert into Plate
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        Id,
-      </if>
-      <if test="image != null" >
-        image,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="visitor != null" >
-        visitor,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="image != null" >
-        #{image,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="visitor != null" >
-        #{visitor,jdbcType=INTEGER},
-      </if>
-    </trim>
+      #{visitor,jdbcType=INTEGER},#{sort})
   </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.medusa.bhsq.entity.Plate" >
     update Plate
@@ -69,14 +42,10 @@
       <if test="visitor != null" >
         visitor = #{visitor,jdbcType=INTEGER},
       </if>
+        <if test="sort != null" >
+        sort = #{sort},
+      </if>
     </set>
-    where Id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.medusa.bhsq.entity.Plate" >
-    update Plate
-    set image = #{image,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      visitor = #{visitor,jdbcType=INTEGER}
     where Id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

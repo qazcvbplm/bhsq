@@ -1,5 +1,7 @@
 package com.medusa.bhsq.dao;
 
+import java.util.List;
+
 import com.medusa.bhsq.entity.Plate;
 
 public interface PlateMapper {
@@ -14,4 +16,5 @@ public interface PlateMapper {
     int updateByPrimaryKeySelective(Plate record);
 
     int updateByPrimaryKey(Plate record);
+    List<Plate> findall(); 
 }

@@ -22,10 +22,10 @@ function TZH(){
 				var xhr=new XMLHttpRequest();
 				var fd=new FormData();
 				fd.append("image",file.files[0]);
-				xhr.open("post",obj.dz,true);
+				xhr.open("post",obj.url,true);
 				xhr.addEventListener('load',function(){
 					var json=eval(xhr.responseText);
-					obj.su(json);
+					obj.success(json);
 				})
 				xhr.send(fd);
 			
@@ -65,4 +65,19 @@ function TZH(){
 			})
 			
         }
+	
+	this.alert=function(obj){
+		$("#mt").html('<div class="modal fade" id="mtc" tabindex="-1" role="dialog">'+
+		  '<div class="modal-dialog" role="document">'+
+		    '<div class="modal-content">'+
+		     ' <div class="modal-body">'+
+		      '  <p>'+obj.msg+'</p>'+
+		     ' </div>'+
+		     ' <div class="modal-footer">'+
+		       ' <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>'+
+		       ' <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="'+obj.success+'" >确定</button>'+
+		      '</div></div></div></div>');
+		$("#mtc").modal("show");
+		
+	}
 }
