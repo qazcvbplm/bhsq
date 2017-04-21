@@ -11,11 +11,10 @@
   <sql id="Base_Column_List" >
     Id, admin, pass, simage, qimage
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="find" resultMap="BaseResultMap" >
     select 
-    <include refid="Base_Column_List" />
+    *
     from config
-    where Id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from config
@@ -27,43 +26,7 @@
     values (#{id,jdbcType=INTEGER}, #{admin,jdbcType=VARCHAR}, #{pass,jdbcType=VARCHAR}, 
       #{simage,jdbcType=VARCHAR}, #{qimage,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.Config" >
-    insert into config
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        Id,
-      </if>
-      <if test="admin != null" >
-        admin,
-      </if>
-      <if test="pass != null" >
-        pass,
-      </if>
-      <if test="simage != null" >
-        simage,
-      </if>
-      <if test="qimage != null" >
-        qimage,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="admin != null" >
-        #{admin,jdbcType=VARCHAR},
-      </if>
-      <if test="pass != null" >
-        #{pass,jdbcType=VARCHAR},
-      </if>
-      <if test="simage != null" >
-        #{simage,jdbcType=VARCHAR},
-      </if>
-      <if test="qimage != null" >
-        #{qimage,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.medusa.bhsq.entity.Config" >
     update config
     <set >
@@ -80,14 +43,6 @@
         qimage = #{qimage,jdbcType=VARCHAR},
       </if>
     </set>
-    where Id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.medusa.bhsq.entity.Config" >
-    update config
-    set admin = #{admin,jdbcType=VARCHAR},
-      pass = #{pass,jdbcType=VARCHAR},
-      simage = #{simage,jdbcType=VARCHAR},
-      qimage = #{qimage,jdbcType=VARCHAR}
     where Id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

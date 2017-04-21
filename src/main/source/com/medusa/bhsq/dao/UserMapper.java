@@ -18,4 +18,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
     
     List<User> findall();
+
+	List<User> findbyopenid(String openids);
+	
+	User findbyid(int id);
 }

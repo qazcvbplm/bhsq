@@ -33,8 +33,30 @@ public class Article implements Serializable{
     
     private Article article;
     
+    private int replace;
     
-    public Plate getPlate() {
+    
+    private User user;
+    
+    
+    
+    public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public int getReplace() {
+		return replace;
+	}
+
+	public void setReplace(int replace) {
+		this.replace = replace;
+	}
+
+	public Plate getPlate() {
 		return plate;
 	}
 

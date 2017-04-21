@@ -24,22 +24,21 @@
     from user
     where Id = #{id,jdbcType=INTEGER}
   </select>
-  <select id="findall" resultMap="BaseResultMap">
+  <select  id="findall" resultMap="BaseResultMap">
       select * from user
+  </select>
+   <select  id="findbyid" resultMap="BaseResultMap" parameterType="int">
+      select * from user where id=#{id}
+  </select>
+    <select id="findbyopenid" resultMap="BaseResultMap" parameterType="string">
+      select * from user where openid=#{openids}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from user
     where Id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.medusa.bhsq.entity.User" >
-    insert into user (Id, name, head, 
-      ex, introduction, sex, 
-      birth, wxnumber, openid, 
-      levelid, lasttime)
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{head,jdbcType=VARCHAR}, 
-      #{ex,jdbcType=INTEGER}, #{introduction,jdbcType=VARCHAR}, #{sex}, 
-      #{birth,jdbcType=VARCHAR}, #{wxnumber,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, 
-      #{levelid,jdbcType=INTEGER}, #{lasttime,jdbcType=VARCHAR})
+  <insert id="insert" parameterType="com.medusa.bhsq.entity.User"  useGeneratedKeys="true" keyProperty="id" >
+   insert into user (name,head,openid) value(#{name},#{head},#{openid})
   </insert>
   <insert id="insertSelective" parameterType="com.medusa.bhsq.entity.User" >
     insert into user

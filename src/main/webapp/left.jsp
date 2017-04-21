@@ -48,6 +48,16 @@
 			                          <li><a class="" href="userlist.do">用户列表</a></li>
                       </ul>
                   </li> 
+                    <li class="sub-menu">
+                      <a href="javascript:;" >
+                          <i class="icon-book"></i>
+                          <span>系统配置</span>
+                          <span class="arrow"></span>
+                      </a>
+                      <ul class="sub">
+			                          <li><a class="" href="">修改广告位</a></li>
+                      </ul>
+                  </li> 
                  
               </ul>
               <!-- sidebar menu end-->

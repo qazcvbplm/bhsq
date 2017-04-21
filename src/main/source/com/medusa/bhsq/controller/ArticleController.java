@@ -2,7 +2,9 @@ package com.medusa.bhsq.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +24,9 @@ import com.medusa.bhsq.entity.Article;
 import com.medusa.bhsq.util.AjaxUtil;
 import com.medusa.bhsq.util.FileUp;
 import com.medusa.bhsq.util.Result;
+import com.medusa.bhsq.util.Util;
+import com.medusa.bhsq.wxentity.ArticleDetail;
+import com.medusa.bhsq.wxentity.Index;
 
 @Controller
 public class ArticleController {
@@ -202,5 +207,48 @@ public class ArticleController {
 		}
     	req.getSession().setAttribute("article", rs);
     	return "redirect:editorarticle.jsp";
+    }
+    
+    
+    /*
+     * 小程序首页方法
+     */
+    @RequestMapping("wx/index")
+    public void wxindex(HttpServletResponse rep){
+    	//今日头条
+    	String st=new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+    	String et=Util.getSpecifiedDayAfter(st);
+    	Map<String,Object> map=new HashMap<String,Object>();
+    	map.put("st", st);
+    	map.put("et", et);
+    	List<Article> daytop=articleMapper.daytop(map);
+    	//热门推荐
+    	Map<String,Object> map2=new HashMap<String,Object>();
+    	map2.put("begin", 0);
+    	map2.put("end", 3);
+    	map2.put("ob", "visitor");
+    	map2.put("type", Result.ARTICLE+"");
+    	List<Article> rmtj=articleMapper.top(map2);
+    	//大家都在聊
+    	Map<String,Object> map3=new HashMap<String,Object>();
+    	map3.put("begin", 0);
+    	map3.put("end", 6);
+    	map3.put("ob", "replace");
+    	map3.put("type", Result.ARTICLE+"");
+    	List<Article> dj=articleMapper.top(map3);
+    	Index index=new Index(daytop,dj,rmtj);
+    	AjaxUtil.PrintArrayClass(rep, index);
+    	
+    }
+    
+    /*
+     * 小程序首页方法
+     */
+    @RequestMapping("wx/articledetail")
+    public void articledetail(HttpServletResponse rep,int id){
+              Article a=articleMapper.findbyid(id);
+              List<Article> replace=articleMapper.findreplace(id);
+              ArticleDetail rs=new ArticleDetail(a, replace);
+              AjaxUtil.PrintArrayClass(rep, rs);
     }
 }

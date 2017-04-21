@@ -11,6 +11,8 @@
     <result column="sort" property="sort"  />
     <result column="parent" property="parent" jdbcType="INTEGER" />
      <result column="image" property="image" />
+     <result column="replace" property="replace" />
+     <association property="user" column="userid" select="com.medusa.bhsq.dao.UserMapper.findbyid"></association>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.medusa.bhsq.entity.Article" extends="BaseResultMap" >
     <result column="text" property="text" jdbcType="LONGVARCHAR" />
@@ -33,6 +35,24 @@
       select * from article
       where type=#{type}
        order by time desc
+  </select>
+  <select id="daytop" resultMap="ResultMapWithBLOBs" parameterType="map">
+      select * from article
+      where time between #{st} and #{et}
+      and type=1
+      order by visitor desc
+      limit 3
+  </select>
+  <select id="top" resultMap="ResultMapWithBLOBs" parameterType="map">
+      select * from article
+      where type=#{type}
+      order by #{ob} desc
+      limit #{begin},#{end}
+  </select>
+  <select id="findreplace" resultMap="ResultMapWithBLOBs" parameterType="int">
+      select * from article
+      where type=2 and parent=#{id}
+      order by time desc
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article
