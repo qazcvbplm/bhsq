@@ -27,10 +27,18 @@ public class User implements Serializable{
     
     private Level level;
     
-    
+    private boolean qd=false;
 
     public Level getLevel() {
 		return level;
+	}
+
+	public boolean isQd() {
+		return qd;
+	}
+
+	public void setQd(boolean qd) {
+		this.qd = qd;
 	}
 
 	public void setLevel(Level level) {

@@ -27,4 +27,5 @@ public interface ArticleMapper {
     List<Article> top(Map<String,Object> map);
     
     List<Article> findreplace(int id);
+    List<Article> findbyuser(int id);
 }

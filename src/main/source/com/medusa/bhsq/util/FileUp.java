@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import net.coobird.thumbnailator.Thumbnails;
+
 public class FileUp {
 	
 	public static String UpFile(MultipartFile file,HttpServletRequest request,String dirname)
@@ -21,17 +23,20 @@ public class FileUp {
 			   return null;
 		   }
 		   String newname="u"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+postfix;
+		   String newname2=newname.replace("u", "a");
 		   String path=request.getSession().getServletContext().getRealPath("/");
 		  // path="C:\\Users\\Administrator.hi\\Desktop\\Desktop\\hslp\\WebContent\\controller";//"C:\\Users\\Administrator\\Desktop\\wschool\\WebContent\\controller";
 	       path+="/"+dirname;
 		   File temp=new File(path);
 		   File temp2=new File(path+"/"+newname);
+		   File temp3=new File(path+"/"+newname2);
 		   if(!temp.exists())
 		   {
 			   temp.mkdir();
 		   }
 		   try {
 			file.transferTo(temp2);
+			Thumbnails.of(temp2).scale(0.1).toFile(temp3);
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -50,23 +55,26 @@ public class FileUp {
 		   }
 		   int index=file.getOriginalFilename().lastIndexOf(".");
 		   String postfix=file.getOriginalFilename().substring(index);
-		   if(!postfix.equals(".jpg")&&!postfix.equals(".jpeg")&!postfix.equals(".png"))
+		   if(!postfix.equals(".jpg")&&!postfix.equals(".jpeg")&!postfix.equals(".png")&&!postfix.equals(".bmp"))
 		   {
 			   request.getSession().setAttribute("error", "图片格式不正确");
 			   return null;
 		   }
 		   String newname="u"+new SimpleDateFormat("yyyyMMddHHmmss").format(new Date())+"-"+s+postfix;
+		   String newname2=newname.replace("u", "a");
 		   String path=request.getSession().getServletContext().getRealPath("/");
 		  // path="C:\\Users\\Administrator.hi\\Desktop\\Desktop\\hslp\\WebContent\\controller";//"C:\\Users\\Administrator\\Desktop\\wschool\\WebContent\\controller";
 	       path+="/"+dirname;
 		   File temp=new File(path);
 		   File temp2=new File(path+"/"+newname);
+		   File temp3=new File(path+"/"+newname2);
 		   if(!temp.exists())
 		   {
 			   temp.mkdir();
 		   }
 		   try {
 			file.transferTo(temp2);
+			Thumbnails.of(temp2).scale(0.1).toFile(temp3);
 		} catch (IllegalStateException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

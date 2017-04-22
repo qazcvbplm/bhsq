@@ -1,6 +1,8 @@
 package com.medusa.bhsq.controller;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -20,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.medusa.bhsq.dao.ArticleMapper;
 import com.medusa.bhsq.dao.PlateMapper;
+import com.medusa.bhsq.dao.ShipMapper;
 import com.medusa.bhsq.entity.Article;
 import com.medusa.bhsq.util.AjaxUtil;
 import com.medusa.bhsq.util.FileUp;
@@ -33,6 +36,8 @@ public class ArticleController {
 	
 	@Autowired
 	private ArticleMapper articleMapper;
+	@Autowired
+	private ShipMapper shipMapper;	
 	@Autowired
 	private PlateMapper plateMapper;
 	
@@ -233,22 +238,83 @@ public class ArticleController {
     	Map<String,Object> map3=new HashMap<String,Object>();
     	map3.put("begin", 0);
     	map3.put("end", 6);
-    	map3.put("ob", "replace");
+    	map3.put("ob", "rep");
     	map3.put("type", Result.ARTICLE+"");
     	List<Article> dj=articleMapper.top(map3);
+    	settime(daytop);
+    	settime(rmtj);
+    	settime(dj);
     	Index index=new Index(daytop,dj,rmtj);
     	AjaxUtil.PrintArrayClass(rep, index);
     	
     }
     
     /*
-     * 小程序首页方法
+     * 文章详情方法
      */
     @RequestMapping("wx/articledetail")
-    public void articledetail(HttpServletResponse rep,int id){
+    public void articledetail(HttpServletResponse rep,int id,int userid){
               Article a=articleMapper.findbyid(id);
+              Article temp=new Article();
+              temp.setVisitor(a.getVisitor()+1);
+              temp.setId(id);
+              articleMapper.updateByPrimaryKeySelective(temp);
+              boolean scb=true;
+              boolean gzb=true;
+              boolean zanb=true;
+              Map<String,Object> map=new HashMap<String, Object>();
+	          map.put("type", Result.ZAN);
+	    	  map.put("articleid", id);
+	    	  map.put("userid", userid);
+    		  int zan=shipMapper.findshipcount(map);
+    		  if(zan==0)
+    		  zanb=false;
               List<Article> replace=articleMapper.findreplace(id);
-              ArticleDetail rs=new ArticleDetail(a, replace);
+              Map<String,Object> map2=new HashMap<String, Object>();
+              map2.put("type", Result.SC);
+              map2.put("articleid", a.getId());
+              map2.put("userid", userid);
+              int sc=shipMapper.findshipcount(map2);
+              if(sc==0)
+              scb=false;  
+              Map<String,Object> map3=new HashMap<String, Object>();
+              map3.put("type", Result.GZ);
+              map3.put("articleid", a.getUserid());
+              map3.put("userid", userid);
+              int gz=shipMapper.findshipcount(map3);
+              if(gz==0)
+              gzb=false;
+              List<Article> aa=new ArrayList<Article>();
+              aa.add(a);
+              settime(aa);
+              settime(replace);
+              ArticleDetail rs=new ArticleDetail(a, replace,zanb,scb,gzb);
               AjaxUtil.PrintArrayClass(rep, rs);
+    }
+    
+    
+    
+    public void settime(List<Article> list){
+    	SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	for(int i=0;i<list.size();i++)
+    	{
+    		try {
+    			long now=new Date().getTime();
+				long fb=sf.parse(list.get(i).getTime()).getTime();
+				long cha=now-fb;
+				int c=(int) (cha/1000/60/60);
+				if(c<24)
+				{
+					list.get(i).setTime(c+"小时前");
+				}else if(c>=24)
+				{
+					int day=c%24;
+					list.get(i).setTime(day+"天前");
+				}
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+    	}
+    	
     }
 }

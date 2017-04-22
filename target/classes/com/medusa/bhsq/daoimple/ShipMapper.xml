@@ -17,6 +17,26 @@
     from ship
     where Id = #{id,jdbcType=INTEGER}
   </select>
+    <select id="findshipcount" resultType="int" parameterType="map" >
+    select 
+    count(*)
+    from ship
+    where type=#{type}
+    <if test="userid!=null">
+    and articleid=#{articleid}
+        </if>
+    <if test="userid!=null">
+    and userid=#{userid}
+    </if>
+  </select>
+   <select id="findzan" resultType="int" parameterType="int" >
+    select 
+    count(*)
+    from ship
+    where type=1
+    and
+    articleid=#{articleid}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from ship
     where Id = #{id,jdbcType=INTEGER}

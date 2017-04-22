@@ -5,6 +5,11 @@ public class Result {
 	public static final int ARTICLE=1;
 	public static final int REPLACE=2;
 	public static final int REPLACE_REPLACE=3;
+	public static final int ZAN=1;
+	public static final int SC=2;
+	public static final int JB=3;
+	public static final int DS=4;
+	public static final int GZ=5;
 	public static final int ERROR=0;
     public static final int SHOP_OPEN=1;
     public static final int SHOP_CLOSE=0;

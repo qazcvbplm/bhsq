@@ -11,8 +11,9 @@
     <result column="sort" property="sort"  />
     <result column="parent" property="parent" jdbcType="INTEGER" />
      <result column="image" property="image" />
-     <result column="replace" property="replace" />
+     <result column="rep" property="replace" />
      <association property="user" column="userid" select="com.medusa.bhsq.dao.UserMapper.findbyid"></association>
+      <association property="zan" column="id" select="com.medusa.bhsq.dao.ShipMapper.findzan"></association>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.medusa.bhsq.entity.Article" extends="BaseResultMap" >
     <result column="text" property="text" jdbcType="LONGVARCHAR" />
@@ -46,8 +47,14 @@
   <select id="top" resultMap="ResultMapWithBLOBs" parameterType="map">
       select * from article
       where type=#{type}
-      order by #{ob} desc
+      order by ${ob} desc
       limit #{begin},#{end}
+  </select>
+   <select id="findbyuser" resultMap="ResultMapWithBLOBs" parameterType="int">
+      select * from article
+      where type=1
+      and userid=#{id}
+      
   </select>
   <select id="findreplace" resultMap="ResultMapWithBLOBs" parameterType="int">
       select * from article

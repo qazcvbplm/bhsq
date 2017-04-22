@@ -1,5 +1,7 @@
 package com.medusa.bhsq.dao;
 
+import java.util.Map;
+
 import com.medusa.bhsq.entity.Ship;
 
 public interface ShipMapper {
@@ -14,4 +16,8 @@ public interface ShipMapper {
     int updateByPrimaryKeySelective(Ship record);
 
     int updateByPrimaryKey(Ship record);
+    
+    int findshipcount(Map<String,Object> map);
+    
+    int findzan(int articleid);
 }

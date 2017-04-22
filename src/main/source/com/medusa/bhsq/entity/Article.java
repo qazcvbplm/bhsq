@@ -15,8 +15,6 @@ public class Article implements Serializable{
     
     private String image;
 
-    private Integer visitor=0;
-
     private Integer userid;
 
     private Integer type;
@@ -26,6 +24,7 @@ public class Article implements Serializable{
     private String sort;
 
     private Integer parent;
+
     @Length(min=40,message="文章内容长度太短")
     private String text;
     
@@ -33,14 +32,25 @@ public class Article implements Serializable{
     
     private Article article;
     
-    private int replace;
+    private Integer visitor=0;
     
+    private int replace;
     
     private User user;
     
+    private int zan;
     
     
-    public User getUser() {
+    
+    public int getZan() {
+		return zan;
+	}
+
+	public void setZan(int zan) {
+		this.zan = zan;
+	}
+
+	public User getUser() {
 		return user;
 	}
 

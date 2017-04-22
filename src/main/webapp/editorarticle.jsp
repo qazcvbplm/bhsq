@@ -89,7 +89,7 @@
                            <c:forEach var="im" items="${article.imagelist}" varStatus="in">
                            <c:if test="${im != '1'}">
                            <div class="col-md-4 " >
-                           <center><div  id="show${in.index}" onclick="select(this)"  style="width:200px;height:200px;background:url('${im}');background-size:100% 100%;" ></div></center>
+                           <center><div  class="thumbnail"  id="show${in.index}" onclick="select(this)"  style="width:200px;height:200px;background:url('${im}');background-size:100% 100%;" ></div></center>
                            </div>
                            </c:if>
                            <c:if test="${im eq '1'}">
@@ -177,8 +177,8 @@
           $("#image1").click();
     	 if(id=='show1')
              $("#image2").click();
-    	 if(id=='show3')
-             $("#image2").click();
+    	 if(id=='show2')
+             $("#image3").click();
     	 
      }
      
