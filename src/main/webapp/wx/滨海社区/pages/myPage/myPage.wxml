@@ -1,0 +1,78 @@
+<!--pages/myPage/myPage.wxml-->
+<scroll-view class="container" scroll-x="{{false}}" >
+
+<view class="myCenter">
+<view class="myCenterTop">
+<view class="headImg fl">
+<view><image src="{{user.head}}"></image></view>
+</view>
+<!--end headImg-->
+<view class="infoList fl">
+<text style="font-size:34rpx;font-weight:bold;color:#000">{{user.name}}\n</text>
+<text>成长值：{{user.ex}}/{{user.ex2}}\n</text>
+<text>简介：{{user.intro}}</text>
+<image src="{{user.level}}"></image>
+</view>
+<!--end infoList-->
+<view class="arrowImgBox fr" bindtap="arrowActive">
+<image src="{{arrowActive?'/images/arrowActive.jpg':'/images/arrow.jpg'}}"></image>
+</view>
+<!--end arrowImgBox-->
+</view>
+<!--end myCenterTop-->
+
+<view class="myCenterFoot">
+<view class="post fl" bindtap="gotoPost">
+<text class="number">{{tz}}</text>
+<text >\n帖子</text>
+</view>
+<!--end post-->
+<view class="follow fl" bindtap="gotofollow">
+<text class="number">{{gz}}</text>
+<text>\n关注</text>
+</view>
+<!--end follow-->
+<view class="fans fl" bindtap="gotoFans">
+<text class="number">{{fs}}</text>
+<text>\n粉丝</text>
+</view>
+<!--end fans-->
+</view>
+<!--end myCenterFoot-->
+</view>
+<!--end myCenter-->
+
+<block wx:for="{{myLists}}">
+<view class="myLists">
+<view class="myListsTop" id="{{index}}"  bindtap="myListsActive" >
+<view class="myListsImgBox fl"><image src="{{item.img}}"></image></view>
+<view class="myListsText fl">{{item.text}}</view>
+<view class="myListsImg fr">
+<image src="{{myListsActive==index?'/images/arrowActive.jpg':'/images/arrow.jpg'}}"></image>
+</view>
+<!--end arrowImgBox-->
+</view>
+<!--end myListsTop-->
+<view class="myListsFoot"></view>
+<!--end myListsFoot-->
+</view>
+</block>
+<!--end myLists-->
+
+<view wx:if="{{!user.qd}}" class="sign" bindtap="clickSign">
+<view>每日签到</view>
+</view>
+<!--end sign-->
+
+
+<!--签到成功-->
+<view wx:if="{{user.qd}}" class="myPageSignSuccessBox" wx:if="{{1}}">
+<view class="myPageSignSuccess">
+</view>
+<view class="myPageSign">
+<text>今天已经签了哦！</text>
+</view>
+</view>
+<!--end SuccessImg-->
+
+</scroll-view>

@@ -1,0 +1,24 @@
+<!--pages/myConcern/myConcern.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<block wx:for="{{[1,2,3,4]}}">
+
+<view class="myConcernBox fl">
+<view class="timeBox">01-20 13:18</view>
+<view class="myConcernFoot">
+
+<view class="headImg fl">
+<view class="headImgBox"><image src="/images/head_img.jpg"></image></view>
+</view>
+<!--end headImg-->
+<view class="messageBox fl">
+<text style="color:#1e8be8">@六六六</text>刚刚关注了你，去看看他的主页吧！</view>
+<view class="arrow"></view>
+</view>
+<!--end myConcernFoot-->
+</view>
+<!--end myConcernBox-->
+
+</block>
+
+</scroll-view>

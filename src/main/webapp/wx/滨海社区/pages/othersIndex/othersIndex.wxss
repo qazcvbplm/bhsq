@@ -1,0 +1,76 @@
+/* pages/othersIndex/othersIndex.wxss */
+
+.newsBoxThree,.newsBoxTwo,.newsBoxOne{
+    width: 750rpx;
+    margin-bottom: 19rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+
+}
+.newsTopThree{
+    height: 80rpx;
+    padding: 34rpx 30rpx 0;
+}
+.newsTopImg{
+    width: 87rpx;
+    height: 87rpx;
+    border-radius: 87rpx;
+    overflow: hidden;
+}
+
+.newsTopImg image{
+    width: 87rpx;
+    height: 87rpx;
+}
+.newsTitleThree{
+    font-size: 34rpx;
+    padding: 43rpx 30rpx 0;
+}
+.newsTextThree{
+    font-size: 34rpx;
+    padding: 15rpx 30rpx 0;
+}
+.newsTitleThree text{
+    font-weight: bold;
+}
+
+.newsPicThree,.newsPicTwo{
+    padding: 38rpx 30rpx 0;
+}
+.newsPicThree image{
+    width: 225rpx;
+    height: 176rpx;
+    margin-right: 7rpx;
+}
+/*end .newsPicThree*/
+
+.newsPicTwo image{
+    width: 337rpx;
+    height: 197rpx;
+    margin-right: 10rpx;
+}
+/*end newsPicTwo*/
+.newsFootThree{
+    height: 69rpx;
+    line-height: 69rpx;
+    color: #666666;
+    padding: 0 30rpx;
+    font-size: 22rpx;
+}
+
+.speakBoxThree,.praiseBoxThree{
+    width: 100rpx;
+    height: 50rpx;
+    padding: 8rpx 10rpx 0 0 ;
+
+}
+.speakBoxThree{
+    padding-top: 10rpx;
+}
+
+.newsAuthorThree{
+    width: 145rpx;
+}
+
+/*end newsBoxThree*/

@@ -1,0 +1,185 @@
+  <import src="../../wxParse/wxParse.wxml"/> 
+<!--pages/information/information.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+<view class="head">
+<view class="headLeft fl">
+<view class="headLeftImgBox fl">
+<image src="{{user.head}}"></image>
+</view>
+<!--end headLeftImgBox-->
+<view class="headImgBoxRight fr">
+<text class="author">{{user.name}}</text>
+<text class="identity">幼儿园</text>
+<text class="visitTime">{{article.time}}</text>
+</view>
+</view>
+<!--end headLeft-->
+<view class="headRight fr " bindtap="gz">
+<text wx:if="{{!article.gz}}">+ 关注</text>
+<text wx:if="{{article.gz}}">已关注</text>
+</view>
+<!--end headRight-->
+</view>
+<!--end head-->
+
+<view class="inforContent">
+<view class="inforContentTitle">
+<text>{{article.title}}</text>
+</view>
+<!--end inforContentTitle-->
+
+<view class="inforContentText">
+ <template is="wxParse" data="{{wxParseData:text.nodes}}"/>
+ 
+</view>
+<!--end inforContentText-->
+
+<view class="inforContentFoot">
+<view class="inforContentFootLeft fl">
+<view class="read fl">阅读 {{article.visitor}}
+</view>
+<view class="praise fl" bindtap="zan">
+<image wx:if="{{article.zan2}}" bindtap="praiseNumAdd"  src="/images/zhan2.jpg"></image>
+<image wx:if="{{!article.zan2}}" bindtap="praiseNumAdd"  src="/images/zhan.jpg"></image>
+<text>点赞{{article.zan}}</text>
+</view>
+<view class="collect fl" bindtap="sc">
+<image wx:if="{{!article.sc}}" src="/images/collect.jpg"></image>
+<image wx:if="{{article.sc}}" src="/images/collect2.jpg"></image>
+<text>收藏</text>
+</view>
+</view>
+<!--end inforContentFootLeft-->
+<view class="inforContentFootRight fr">
+<text bindtap="reportSuccess">举报</text>
+</view>
+<!--end inforContentFootRight-->
+</view>
+<!--end inforContentFoot-->
+</view>
+<!--end inforContent-->
+
+<view class="interval">
+</view>
+<!--end interval-->
+
+<view class="prize">
+<text>给个赏钱，支持我继续创作吧！</text>
+<view class="prizeBox" bindtap="showPrizePage">
+赏
+</view>
+<!--end prizeBox-->
+</view>
+<!--end prize-->
+
+<view wx:if="{{prizeFlag}}">
+<view class="signBox"></view>
+<view class="pricePage">
+<view class="pricePageTitle">打赏</view>
+<view class="pricePagePrice">
+<view class="priceSelect">
+
+<block wx:for="{{moneyNum}}">
+<view class="{{select==index?'blueBorder':'blackBorder'}} {{index==1?'priceMargin':''}}  {{index==4?'priceMargin':''}} " id="{{index}}" bindtap="moneySelect">{{item}}</view>
+</block>
+
+<!--<view class="{{select1?'blackBorder':'blueBorder'}}" catchtap="select1">1元</view>
+<view class="{{select2?'blackBorder':'blueBorder'}}" catchtap="select2" style="margin:0 55rpx;">1元</view>
+<view class="{{select3?'blackBorder':'blueBorder'}}" catchtap="select3">1元</view>
+<view class="{{select4?'blackBorder':'blueBorder'}}" catchtap="select4">1元</view>
+<view class="{{select5?'blackBorder':'blueBorder'}}" catchtap="select5" style="margin:0 55rpx;">1元</view>
+<view class="{{select6?'blackBorder':'blueBorder'}}" catchtap="select6">1元</view>-->
+</view>
+<!--end priceSelect-->
+<view class="inputBox">
+<input placeholder="请输入打赏金额(例：18)" />
+<view class="priceInputPoint">打赏后这些钱都会到作者的微信钱包哦~</view>
+</view>
+<!--end inputBox-->
+</view>
+<!--end prizePagePrice-->
+<view class="pricePagefoot" >
+<view hover-class="blue" hover="true" style="border-right: 1rpx solid #d2d3d5;" bindtap="closePricePage">取消</view>
+<view hover-class="blue" hover="true" style="border-left: 1rpx solid #d2d3d5;">打赏</view>
+</view>
+<!--end prizePagefoot-->
+</view>
+<!--end prizePage-->
+</view>
+<!--end signBox-->
+
+<view class="comment">
+<view class="commentTop">
+<text>全部评论</text>{{replace.length}}
+<text bindtap="rep" style="padding-right:20rpx;color:#1e8be8;padding-left:295rpx">回复楼主</text><image src="/images/pen.jpg"></image>
+</view>
+<!--end commentTop-->
+<block wx:for="{{replace}}">
+<view class="commentContent">
+<view class="headImg fl">
+<image src="{{item.head}}"></image>
+</view>
+<!--end headImg-->
+<view class="headImgRight fr">
+<view class="headImgRightTop">
+<view class="fl">{{item.name}}
+<image src="{{item.level}}"></image>
+</view>
+<view class="fr">#{{index}}</view>
+</view>
+<!--end headImgRightTop-->
+<view class="commentText clear">
+<text>{{item.title}}</text>
+</view>
+<!--end commentText-->
+<view class="headImgRightFoot">
+<view class="commentTime fl">{{item.time}}</view>
+<view class="commentTimeRight fr">
+<image style="width:39rpx;height:39rpx;padding-right:5rpx;" src="/images/praise.jpg"></image>
+<text>{{item.zan}}</text>
+<image bindtap="commentSuccess" style="width:33rpx;height:29rpx;padding:0 28rpx" src="/images/commentImg.jpg"></image>
+<text bindtap="reportSuccess">·举报</text>
+</view>
+<!--end commentTimeRight-->
+</view>
+<!--end headImgRightFoot-->
+</view>
+<!--headImgRight-->
+</view>
+<!--end commentContent-->
+</block>
+</view>
+<!--end comment-->
+
+<view class="more clear">
+查看更多<image src="/images/more.jpg"></image>
+</view>
+<!--end more-->
+
+<view class="interval">
+</view>
+<!--end interval-->
+
+<!--举报成功-->
+<view class="signSuccessBox" wx:if="{{SuccessFlag}}">
+<view class="signSuccess">
+</view>
+<view class="SuccessImg">
+<image src="/images/success.png"></image>
+<text>\n举报成功</text>
+</view>
+<!--end SuccessImg-->
+</view>
+
+<!--回复成功-->
+<view class="signSuccessBox" wx:if="{{commentSuccessFlag}}">
+<view class="signSuccess">
+</view>
+<view class="SuccessImg">
+<image src="/images/success.png"></image>
+<text>\n回复成功</text>
+<text>\n成长值: +1</text>
+</view>
+<!--end SuccessImg-->
+</view>
+</scroll-view>

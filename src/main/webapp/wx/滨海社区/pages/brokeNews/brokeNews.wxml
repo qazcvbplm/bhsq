@@ -1,0 +1,64 @@
+<!--pages/brokeNews/brokeNews.wxml-->
+
+<scroll-view class="container" scroll-x="{{false}}">
+<view class="breakNews">
+<view class="breakImgBox fl"><image src="/images/breakImg.jpg"></image></view>
+<view class="breakText fl">
+<view style="font-size:32rpx;height:50rpx;line-height:50rpx;">我要爆料</view>
+<view style="font-size:21rpx;color:#666666;height:32rpx;line-height:32rpx">677讨论|21万围观</view>
+</view>
+<view class="join fr" bindtap="joinPage">参与</view>
+</view>
+<!--end breakNews-->
+
+<block wx:for="{{newsTop}}">
+<view class="newsTop">
+<view class="newsTopImg fl"><image src="{{item.newsTopImg}}"></image></view>
+<view class="newsTopText fr">{{item.newsTopText}}</view>
+</view>
+</block>
+<!--end newsTop-->
+
+<view class="breakNewsTop">
+<view class="reply {{replyAvtive?'active':''}} fl" bindtap="{{replyAvtive?'':'active'}}"><text>最新回复</text></view>
+<view class="release {{releaseAvtive?'active':''}} fr " bindtap="{{releaseAvtive?'':'active'}}"><text>最新发布</text></view>
+</view>
+<!--end breakNewsTop-->
+
+<view class="replyContent">
+<view class="replyContentTop">
+<view class="headImgBox fl"><image src="/images/head_img.jpg"></image></view>
+<view class="headImgBoxRight fl">
+<view style="font-size:32rpx;">张三</view>
+<view style="color:#666666;font-size:24rpx;">1小时前</view>
+</view>
+<view class="concern fr" bindtap="concernCancel">{{concernCancelflag?'+ 关注':'取消关注'}}</view>
+</view>
+<!--end replyContentTop-->
+
+<view class="replyContentTitle">
+为什么我在近十几年里所接触的日本动画渐渐发生了转型？
+</view>
+<!--end replyContentTitle-->
+
+<view class="replyContentText">
+本人90后，可以说是深受日本动画影响的一代。看了大部分的影响。
+</view>
+<!--end replyContentText-->
+<view class="replyContentImg">
+<image src="/images/01.jpg"></image>
+<image style="padding: 0 8rpx" src="/images/01.jpg"></image>
+<image src="/images/01.jpg"></image>
+</view>
+<!--end replyContentImg-->
+<view class="replyContentFoot fr">
+<view class="fl"><image src="/images/zhan.jpg"></image><text>5</text></view>
+<view class="fl"><image bindtap="replyPage" src="/images/speak.jpg"></image><text>5</text></view>
+<view class="fl"><image src="/images/eye.jpg"></image><text>55</text></view>
+</view>
+<!--end replyContentFoot-->
+</view>
+<!--end replyContent-->
+
+</scroll-view>
+

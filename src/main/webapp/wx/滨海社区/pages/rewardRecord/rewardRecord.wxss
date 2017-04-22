@@ -1,0 +1,100 @@
+/* pages/rewardRecord/rewardRecord.wxss */
+page{
+    background-color: #f4f4f4;
+}
+
+.rewardRecordBox{
+    width: 750rpx;
+    margin-top: 19rpx;
+    background-color: #fff;
+}
+
+.rewardRecordBoxTop{
+    border-top: 1rpx solid #f4f4f4;
+    height: 246rpx;
+    padding: 30rpx 288rpx 0;
+}
+
+.headImgBox{
+    width: 169rpx;
+    height: 169rpx;
+    border-radius: 169rpx;
+    overflow: hidden;
+}
+.headImgBox image{
+    width: 169rpx;
+    height: 169rpx;
+}
+.rewardRecordBoxTop text{
+    display: block;
+    width: 169rpx;
+    height: 45rpx;
+    font-size: 34rpx;
+    font-weight: bold;  
+    padding-top: 30rpx;
+}
+
+
+.moneyBox{
+    width: 750rpx;
+    height: 160rpx;
+    text-align: center;
+    line-height: 160rpx;
+    border-bottom: 1rpx solid #f4f4f4;      
+}
+
+.lookMore{
+    width: 190rpx;
+    height: 104rpx;
+    padding: 0 280rpx;
+    line-height: 104rpx;
+    border-bottom: 1rpx solid #f4f4f4;  
+}
+
+.lookMore image{
+    width: 25rpx;
+    height: 16rpx;
+}
+.lookMore text{
+    width:140rpx;
+    display:block;
+    text-align:center;
+    color: #1e8be8;
+}
+/*end rewardRecordBox*/
+
+
+.myCenterTop{
+    width: 674rpx;
+    height: 107rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+    padding: 14rpx 38rpx;
+    background-color: #fff;
+}
+.headImg{
+    width: 122rpx;
+
+}
+.headImg view{
+    width: 104rpx;
+    height: 104rpx;
+    border-radius: 81rpx;
+    overflow: hidden;
+}
+.headImg image{
+    width: 104rpx;
+    height: 104rpx;
+}
+.name{
+    font-size: 30rpx;
+    color: #000;
+    font-weight: bold;
+}
+.arrowImgBox{
+    height: 104rpx;
+    line-height: 104rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+/*end myCenter*/

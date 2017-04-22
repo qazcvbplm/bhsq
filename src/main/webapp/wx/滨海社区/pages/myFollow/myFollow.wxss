@@ -1,0 +1,65 @@
+/* pages/myFollow/myFollow.wxss */
+page{
+    background-color: #f4f4f4;
+}
+
+.myFansTop{
+    width: 750rpx;
+    height: 99rpx;
+    color: #666666;
+    font-size: 26rpx;
+    padding:0 30rpx;
+    line-height: 99rpx;
+    border-bottom: 1rpx solid #e5e5e5;
+}
+/*end myFansTop*/
+
+
+.myCenterTop{
+    width: 690rpx;
+    height: 144rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+    background-color: #fff;
+    padding: 0 30rpx;
+}
+
+.headImg{
+    width: 130rpx;
+    padding: 12rpx 0 ;
+}
+.headImg view{
+    width: 118rpx;
+    height: 118rpx;
+    border-radius: 81rpx;
+    overflow: hidden;
+}
+.headImg image{
+    width: 118rpx;
+    height: 118rpx;
+}
+
+.infoList{
+    height: 52rpx;
+    padding-top: 35rpx;
+    padding-bottom: 20rpx;
+    color: #919191;
+    font-size: 24rpx;
+    line-height: 40rpx;
+}
+
+.arrowImgBox{
+    width: 85rpx;
+    height: 72rpx;
+    padding-top: 39rpx;
+    padding-bottom: 33rpx;
+}
+.arrowImgBox image{
+    width: 42rpx;
+    height: 42rpx;
+}
+.arrowImgBox view{
+    font-size: 20rpx;
+    text-align: center;
+}
+
+/*end myFansList*/

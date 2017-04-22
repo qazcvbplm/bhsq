@@ -1,0 +1,13 @@
+<!--pages/messages/messages.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<block wx:for="{{messageList}}">
+<view class="messageList" id="{{index}}" bindtap="messageListClick">
+<view class="messageImg fl"><image src="{{item.img}}"></image></view>
+<view class="messageText fl">{{item.text}}</view>
+<view class="messageNumBox fr"><view class="messageNum fr">{{item.messageNum}}</view></view>
+</view>
+</block>
+<!--end messageList-->
+
+</scroll-view>

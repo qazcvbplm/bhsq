@@ -1,0 +1,71 @@
+/* pages/MyCollection/MyCollection.wxss */
+page{
+    background-color: #f4f4f4;
+}
+
+.newsBoxThree,.newsBoxTwo,.newsBoxOne{
+    width: 750rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+
+}
+
+.newsTitleThree{
+    font-size: 34rpx;
+    padding: 43rpx 30rpx 0;
+}
+
+.newsPicThree,.newsPicTwo{
+    padding: 38rpx 30rpx 0;
+}
+.newsPicThree image{
+    width: 225rpx;
+    height: 176rpx;
+    margin-right: 7rpx;
+}
+/*end .newsPicThree*/
+
+.newsPicTwo image{
+    width: 337rpx;
+    height: 197rpx;
+    margin-right: 8rpx;
+}
+/*end newsPicTwo*/
+.newsFootThree{
+    height: 69rpx;
+    line-height: 69rpx;
+    color: #666666;
+    padding: 0 30rpx;
+    font-size: 22rpx;
+}
+.newsAuthorThree{
+    width: 145rpx;
+}
+
+/*end newsBoxThree*/
+.newsBoxOne{
+    padding-top: 38rpx; 
+}
+
+.newsTitleOne{
+    width: 353rpx;
+    height: 202rpx;
+}
+.newsPicOne{
+    width: 337rpx;
+    height: 202rpx;
+}
+.newsPicOne image{
+    width: 337rpx;
+    height: 202rpx;
+}
+.newsTitleOne text{
+    overflow:hidden;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    word-break:break-all;
+}
+/*end newsBoxOne*/

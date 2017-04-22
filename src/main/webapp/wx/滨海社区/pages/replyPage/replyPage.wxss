@@ -1,0 +1,48 @@
+/* pages/replyPage/replyPage.wxss */
+
+.jionContent{
+  width: 750rpx;
+}
+.joinTitle{
+  width: 690rpx;
+  height: 38rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  padding:28rpx 30rpx 31rpx;
+}
+.joinTitle text{
+   overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+    width: 690rpx;
+    display: block;
+}
+.joinText{
+  width: 690rpx;
+  padding: 34rpx 30rpx ;
+  font-size: 32rpx;
+}
+/*end joinNav*/
+
+.joinRelease{
+  width: 690rpx;
+  height: 160rpx;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  padding:9rpx 30rpx;
+  background-color: #f4f4f4;
+  }
+  .joinRelease image{
+    width: 49rpx;
+    height: 39rpx;
+  }
+  .release{
+    width: 690rpx;
+    height: 88rpx;
+    background-color: #1e8be8;
+    border-radius: 10rpx;
+    line-height: 88rpx;
+    color: #fff;
+    }
+
+/*end joinRelease*/

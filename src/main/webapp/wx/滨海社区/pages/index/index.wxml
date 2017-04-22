@@ -1,0 +1,280 @@
+<!--index.wxml-->
+<import src="../../img-loader/img-loader.wxml"/>
+<template is="img-loader" data="{{ imgLoadList }}"></template>
+<scroll-view class="container" scroll-x="false" >
+
+<view class="swiper-container">
+ <swiper indicator-dots="true" indicator-active-color="#ffffff" autoplay="true"interval="5000"duration="500">
+  <block wx:for="{{slider}}">
+   <swiper-item>
+    <image src="{{item}}" mode="widthFix" class="focusImg"></image>
+   </swiper-item>
+  </block>
+ </swiper>
+  
+</view>
+<!--end swiper-container-->
+
+<view class="focusIcon">
+<block wx:for="{{icon}}">
+<view class="iconList" bindtap="brokeNews" id="{{index}}"> <image mode="aspectFill" class="iconImg" src="{{item.img}}"></image>
+<text>\n{{item.text}}</text>
+</view>
+</block>
+</view>
+<!--end focusIcon-->
+
+
+<view class="handLine" >
+<view class="handLineTitle">
+<view>{{handLineTitle}}</view>
+<text style="display:block;background-color:#fff;height:22rpx;position:relative;bottom:-10rpx"></text>
+</view>
+<!--end handLineTitle-->
+<block wx:for="{{tt}}">
+<view wx:if="{{item.image.length==4}}" id="{{item.id}}"  bindtap="information" class="newsBoxThree">
+
+<view class="newsTitleThree">
+<text>{{item.title}}</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicThree">
+<image src="{{item.timage[0]}}"></image>
+<image src="{{item.timage[1]}}"></image>
+<image src="{{item.timage[2]}}"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">{{item.writer}}</view>
+<view class="readNumThree fl">阅读{{item.visitor}}</view>
+<view class="publistTimeThree fr">{{item.time}}</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxThree-->
+
+
+ 
+<view wx:if="{{item.image.length==3}}" bindtap="information" id="{{item.id}}"  class="newsBoxTwo">
+
+<view class="newsTitleThree">
+<text>{{item.title}}</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicTwo">
+<image src="{{item.timage[0]}}"></image>
+<image src="{{item.timage[1]}}"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">{{item.writer}}</view>
+<view class="readNumThree fl">阅读{{item.visitor}}</view>
+<view class="publistTimeThree fr">{{item.time}}</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxTwo-->
+
+
+<view wx:if="{{item.image.length==2}}" bindtap="information" id="{{item.id}}" class="newsBoxOne">
+<view style="padding:0 30rpx;">
+<view class="newsTitleOne fl">
+<text>{{item.title}}</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicOne fr">
+<image src="{{item.timage[0]}}"></image>
+</view>
+<!--end newsPic-->
+</view>
+<view class="newsFootThree clear">
+
+<view class="newsAuthorThree fl">{{item.writer}}</view>
+<view class="readNumThree fl">阅读{{item.visitor}}</view>
+<view class="publistTimeThree fr">{{item.time}}</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxOne-->
+
+</block>
+</view>
+<!--end handLine-->
+
+
+<view class="handLine">
+<view class="handLineTitle">
+<view>{{talkingsTitle}}</view>
+</view>
+<!--end handLineTitle-->
+
+
+<view class="talkingsConter clear">
+<swiper style="height:600rpx;" bindchange="swiperChange">
+
+<swiper-item>
+<block wx:for="{{dj}}">
+<view class="talkings"> 
+<image class="talkingsImg" mode="scaleToFill" src="{{item.timage[0]}}"></image>
+<text>\n{{item.title}}</text>
+<text style="color: #666666">\n{{item.replace}}讨论|{{item.visitor}}围观</text>
+</view>
+</block>
+</swiper-item>
+
+<swiper-item>
+<block wx:for="{{dj}}">
+<view class="talkings"> <image class="talkingsImg" mode="scaleToFill" src="{{item.timage[0]}}"></image>
+<text>\n{{item.text}}</text>
+<text style="color: #666666">\n{{item.replace}}讨论|{{item.visitor}}围观</text>
+</view>
+</block>
+</swiper-item>
+
+</swiper>
+
+ <view class="dotsOne">
+  <block wx:for="{{[1,2]}}">
+   <view class="dotOne {{index == swiperCurrent ? ' activeOne' : ''}}"></view>
+  </block>
+ </view>
+
+</view>
+<!--end talkingsConter-->
+</view>
+<!--end talkings  handLine-->
+
+
+<view class="handLine clear">
+<view class="handLineTitle">
+<view>{{hot}}</view>
+<text style="display:block;background-color:#fff;height:22rpx;position:relative;bottom:-10rpx"></text>
+</view>
+<!--end handLineTitle-->
+<block wx:for="{{rm}}">
+<view wx:if="{{item.image.length==4}}" id="{{item.id}}"  bindtap="information" class="newsBoxThree">
+
+<view class="newsTitleThree">
+<text>{{item.title}}</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicThree">
+<image src="{{item.timage[0]}}"></image>
+<image src="{{item.timage[1]}}"></image>
+<image src="{{item.timage[2]}}"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">{{item.writer}}</view>
+<view class="readNumThree fl">阅读{{item.visitor}}</view>
+<view class="publistTimeThree fr">{{item.time}}</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxThree-->
+
+
+ 
+<view wx:if="{{item.image.length==3}}" bindtap="information" id="{{item.id}}"  class="newsBoxTwo">
+
+<view class="newsTitleThree">
+<text>{{item.title}}</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicTwo">
+<image src="{{item.timage[0]}}"></image>
+<image src="{{item.timage[1]}}"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">{{item.writer}}</view>
+<view class="readNumThree fl">阅读{{item.visitor}}</view>
+<view class="publistTimeThree fr">{{item.time}}</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxTwo-->
+
+
+<view wx:if="{{item.image.length==2}}" bindtap="information" id="{{item.id}}" class="newsBoxOne">
+<view style="padding:0 30rpx;">
+<view class="newsTitleOne fl">
+<text>{{item.title}}</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicOne fr">
+<image src="{{item.timage[0]}}"></image>
+</view>
+<!--end newsPic-->
+</view>
+<view class="newsFootThree clear">
+
+<view class="newsAuthorThree fl">{{item.writer}}</view>
+<view class="readNumThree fl">阅读{{item.visitor}}</view>
+<view class="publistTimeThree fr">{{item.time}}</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxOne-->
+
+</block>
+</view>
+<!--end handLine-->
+
+</scroll-view>
+
+<!--签到-->
+<view wx:if="{{!qd}}">
+<view class="signBox">
+</view>
+<view class="signBot">
+<view class="signtop">
+<view>
+<text bindtap="signSuccess" style="font-size:30px;color:#1e8be8;margin:15px 0;display:block">签到\n</text> 
+<text style="color:#666666">签到领成长值\n</text>
+<text style="color:#1e8be8">点击完成任务</text>
+</view>
+</view>
+<view class="closeSign" bindtap="closeSign">
+<image src="/images/close.png"></image>
+</view>
+</view>
+</view>
+
+<!--签到成功-->
+<view class="signSuccessBox" wx:if="{{SuccessFlag}}">
+<view class="signSuccess">
+</view>
+<view class="SuccessImg">
+<image src="/images/success.png"></image>
+<text>\n签到成功</text>
+<text>\n成长值: +{{GrowthValue}}</text>
+</view>
+</view>
+<!--end SuccessImg-->

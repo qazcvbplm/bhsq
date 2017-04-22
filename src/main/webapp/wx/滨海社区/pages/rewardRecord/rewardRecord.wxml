@@ -1,0 +1,95 @@
+<!--pages/rewardRecord/rewardRecord.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<view class="rewardRecordBox">
+
+<view class="rewardRecordBoxTop">
+<view class="headImgBox">
+<image src="/images/head_img.jpg"></image>
+</view>
+<!--end headImgBox-->
+<text>本月共收到</text>
+</view>
+<!--end rewardRecordBoxTop-->
+
+<view class="moneyBox">
+<text style="font-size:101rpx;font-wight:bold">499.00</text>
+<text style="font-wight:bold">元</text>
+</view>
+<!--end moneyBox-->
+<view class="lookMore">
+<text bindtap="lookMore" class="fl">{{lookMoreFlag?'查看更多':'收起'}}</text>
+<view style="padding:45rpx 0"><image class="fl" src="{{lookMoreFlag?'/images/dowm.jpg':'/images/up.jpg'}}"></image></view>
+</view>
+<!--end lookMore-->
+</view>
+<!--end rewardRecordBox-->
+
+<block wx:for="{{[1,2,3]}}">
+<view class="myCenterTop" hidden="{{lookMoreFlag}}">
+<view class="headImg fl">
+<view><image src="/images/head_img.jpg"></image></view>
+</view>
+<!--end headImg-->
+<view class="infoList fl">
+<text class="name">张三\n</text>
+<text style="color:#919191;font-size:24rpx">简介：</text>
+</view>
+<!--end infoList-->
+<view class="arrowImgBox fr">
+<text>-180.00元</text>
+</view>
+<!--end arrowImgBox-->
+</view>
+<!--end myCenterTop-->
+</block>
+
+
+
+<view class="rewardRecordBox">
+
+<view class="rewardRecordBoxTop">
+<view class="headImgBox">
+<image src="/images/head_img.jpg"></image>
+</view>
+<!--end headImgBox-->
+<text>本月共打赏</text>
+</view>
+<!--end rewardRecordBoxTop-->
+
+<view class="moneyBox">
+<text style="font-size:101rpx;font-wight:bold">499.00</text>
+<text style="font-wight:bold">元</text>
+</view>
+<!--end moneyBox-->
+<view class="lookMore">
+<text bindtap="lookMoreReward" class="fl">{{lookMoreFlag?'查看更多':'收起'}}</text>
+<view style="padding:45rpx 0"><image class="fl" src="{{lookMoreRewardFlag?'/images/dowm.jpg':'/images/up.jpg'}}"></image></view>
+</view>
+<!--end lookMore-->
+</view>
+<!--end rewardRecordBox-->
+
+<block wx:for="{{[1,2,3]}}">
+<view class="myCenterTop" hidden="{{lookMoreRewardFlag}}">
+<view class="headImg fl">
+<view><image src="/images/head_img.jpg"></image></view>
+</view>
+<!--end headImg-->
+<view class="infoList fl">
+<text class="name">张三\n</text>
+<text style="color:#919191;font-size:24rpx">简介：</text>
+</view>
+<!--end infoList-->
+<view class="arrowImgBox fr">
+<text>-180.00元</text>
+</view>
+<!--end arrowImgBox-->
+</view>
+<!--end myCenterTop-->
+</block>
+
+
+
+<view style="height:20rpx"></view>
+</scroll-view>

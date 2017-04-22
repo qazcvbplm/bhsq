@@ -1,0 +1,92 @@
+/* pages/publish/publish.wxss */
+.jionContent{
+  width: 750rpx;
+}
+.joinTitle{
+  width: 690rpx;
+  height: 38rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+  padding:28rpx 30rpx 31rpx;
+}
+.joinText{
+  width: 690rpx;
+  padding: 34rpx 30rpx ;
+  font-size: 32rpx;
+}
+/*end joinNav*/
+
+
+.section{
+    width: 750rpx;
+    height: 456rpx;
+    color: #a9a9a9;
+}
+.sectionTitle{
+    width: 690rpx;
+    height: 58rpx;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+    background-color: #f4f4f4;
+    line-height: 58rpx;
+    font-size: 32rpx;
+    padding: 0 30rpx;
+}
+.sectionTitle image{
+    width: 49rpx;
+    height: 39rpx;
+    padding-top: 8rpx;
+  }
+
+  .sectionList{
+      width: 744rpx;
+      height: 345rpx;
+      padding: 23rpx 0 23rpx 8rpx;
+  }
+  .sectionList text{
+      width: 157rpx;
+      height: 52rpx;
+      border-radius: 50rpx;
+
+      font-size: 26rpx;
+      line-height: 52rpx;
+      text-align: center;
+      display: block;
+      margin: 29rpx 0 0 21rpx ;
+  }
+  .sectionListBorder{
+     border: 1rpx solid #a9a9a9;
+  }
+  .sectionListSelect{
+    border: 1rpx solid #1e8be8;
+    color: #1e8be8;
+  }
+/*end section*/
+
+.joinRelease{
+  width: 690rpx;
+  height: 88rpx;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  text-align: center;
+  padding:30rpx 30rpx;
+  background-color: #f4f4f4;
+  }
+  .release{
+    width: 690rpx;
+    height: 88rpx;
+    background-color: #1e8be8;
+    border-radius: 10rpx;
+    line-height: 88rpx;
+    color: #fff;
+    }
+
+/*end joinRelease*/
+
+.showMessage{
+  width: 240rpx;
+  position: fixed;
+  left:275rpx;
+  top: 460rpx;
+  font-size: 26rpx;
+  color: #fff;
+}

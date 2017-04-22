@@ -1,0 +1,214 @@
+/* pages/community/community.wxss */
+
+.communityPoint{
+    width: 750rpx;
+    height: 411rpx;
+    position: absolute;
+}
+.communityPoint swiper{
+    width: 750rpx;
+    height: 411rpx;
+}
+
+.focusIcon{
+  width: 100%;
+  height: 200px;
+}
+.iconList{
+  width: 25%;
+  height: 75px;
+  padding-top: 20px;
+  float: left;
+  font-size: 16px;
+  font-family: '冬青黑体简体中文';
+  text-align: center;
+}
+.iconImg{
+  width: 81rpx;
+  height: 81rpx;
+}
+/*end focusIcon*/
+
+.dotsOne{
+ position: relative;
+ left: 0;
+ right: 0;
+ bottom: 20rpx;
+ display: flex;
+ justify-content: center;
+}
+.dotsOne .dotOne{
+ margin: 0 8rpx;
+ width: 14rpx;
+ height: 14rpx;
+ background:#888888;
+ border-radius: 8rpx;
+ transition: all .6s;
+}
+.dotsOne .dotOne.activeOne{
+ background:#1e8be8;
+}
+/*end .dotsOne*/
+
+
+
+.focusImg{
+  width: 750rpx;
+  height: 267rpx;
+}
+.swiper-container{
+ position: relative;
+}
+.swiper-container .swiper{
+ height: 300rpx;
+}
+.swiper-container .swiper .img{
+ width: 100%;
+ height: 100%;
+}
+.swiper-container .dots{
+ position: absolute;
+ left: 0;
+ right: 0;
+ bottom: 40rpx;
+ display: flex;
+ justify-content: center;
+}
+.swiper-container .dots .dot{
+ margin: 0 8rpx;
+ width: 14rpx;
+ height: 14rpx;
+ background:#ccc;
+ border-radius: 8rpx;
+ transition: all .6s;
+}
+.swiper-container .dots .dot.activeO{
+ background:#fff;
+}
+/*end swiper-container*/
+
+.communityFocus{
+  width: 750rpx;
+  height: 267rpx;
+  padding-top: 30rpx;
+  border-bottom: 39rpx solid #f4f4f4;
+}
+/*end communityPoint*/
+
+.breakNewsTop{
+  width: 750rpx;
+  height: 82rpx;
+  font-size: 24rpx;
+  padding-top: 17rpx;
+}
+.reply,.release{
+  width: 344rpx;
+  text-align: center;
+  padding-bottom: 12rpx;
+}
+.reply{
+  padding-left: 30rpx;
+}
+.active{
+  color: #1e8be8;
+  border-bottom: 5rpx solid #1e8be8;
+}
+.release{
+  padding-right: 30rpx;
+}
+.reply text{
+  width: 347rpx;
+  height: 65rpx;
+  display: block;
+  line-height: 65rpx;
+  border-right: 1px solid #e5e5e5;
+}
+.release text{
+  width: 347rpx;
+  height: 65rpx;
+  display: block;
+  line-height: 65rpx;
+}
+
+/*end breakNewsTop*/
+
+.replyContent{
+  width: 690rpx;
+  padding: 0 30rpx;
+}
+.replyContentTop{
+  height: 96rpx;
+  padding-top: 35rpx;
+}
+.headImgBox{
+  height: 86rpx;
+  width: 86rpx;
+  border-radius: 86rpx;
+  overflow: hidden;
+}
+.headImgBox image{
+  width: 86rpx;
+  height: 86rpx;
+
+}
+.headImgBoxRight{
+  width: 100rpx;
+  height: 86rpx;
+  text-align: center;
+  padding-left: 22rpx;
+  line-height: 45rpx;
+  }
+
+  .concern{
+   font-size: 26rpx;
+   width: 120rpx;
+   height: 60rpx;
+   border-radius: 10rpx;
+   border:1rpx solid #dfdfdf;
+   text-align: center;
+   line-height: 60rpx;
+  }
+
+.replyContentTitle{
+  padding-top: 35rpx;
+  font-size: 34rpx;
+  line-height: 45rpx;
+  font-weight: bold;
+}
+
+.replyContentText{
+  font-size: 28rpx;
+  padding-top: 27rpx;
+  line-height: 45rpx;
+}
+.replyContentImg{
+  padding-top: 25rpx;
+}
+.replyContentImg image{
+  width: 223rpx;
+  height: 176rpx;
+}
+
+.replyContentFoot{
+  width: 275rpx;
+  height: 29rpx;
+  padding-top: 37rpx;
+  padding-bottom: 35rpx;
+}
+.replyContentFoot image{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 10rpx;
+}
+.replyContentFoot view{
+  width: 91rpx;
+  height: 30rpx;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #979797;
+}
+.replyContentFoot text{
+  position: relative;
+  top: -5rpx;
+}
+/*end replyContent*/

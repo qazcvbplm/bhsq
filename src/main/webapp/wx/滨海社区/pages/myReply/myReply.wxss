@@ -1,0 +1,85 @@
+/* pages/myReply/myReply.wxss */
+
+page{
+    background-color: #f4f4f4;
+}
+
+.myReply{
+    width: 690rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    padding: 52rpx 30rpx 40rpx;
+}
+
+.replyContentTop{
+  height: 96rpx;
+}
+.headImgBox{
+  height: 86rpx;
+  width: 86rpx;
+  border-radius: 86rpx;
+  overflow: hidden;
+}
+.headImgBox image{
+  width: 86rpx;
+  height: 86rpx;
+
+}
+.headImgBoxRight{
+  width: 200rpx;
+  height: 86rpx;
+  padding-left: 22rpx;
+  line-height: 45rpx;
+  }
+
+  .concern{
+   font-size: 26rpx;
+   width: 120rpx;
+   height: 60rpx;
+   border-radius: 10rpx;
+   border:1rpx solid #dfdfdf;
+   text-align: center;
+   line-height: 60rpx;
+  }
+
+  /*end replyContentTop*/
+
+.myReplyMid{
+  padding-left: 100rpx;
+  width: 570rpx;
+  padding-top: 20rpx;
+  font-size: 32rpx;
+}
+.myReplyText{
+  height: 81rpx;
+  width: 540rpx;
+  background-color: #f4f4f4;
+  padding: 28rpx 25rpx 35rpx;
+
+}
+.myReplyText text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  color: #b2b2b2;
+}
+.ReplyText{
+  padding: 10rpx 0;
+}
+/*end myReplyMid*/
+
+.myReplyFoot{
+  width: 690rpx;
+  height: 30rpx;
+}
+
+.myReplyFoot text{
+  font-size: 32rpx;
+  color: #1e8be8;
+  float: right;
+}
+/*end myReplyFoot*/
+
+/*end myReply*/

@@ -1,0 +1,37 @@
+<!--pages/joinPage/joinPage.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<view class="joinNav">
+所在版块 > 我要爆料
+</view>
+<!--end joinNav-->
+
+<view class="jionContent">
+<view class="joinTitle">
+<input  placeholder="请输入标题"  />
+</view>
+<!--end joinTitle-->
+<view class="joinText">
+<textarea  placeholder="试试图文穿插自由排版吧，观看效果会更好哟！" maxlength="-1" />
+</view>
+<!--end joinText-->
+</view>
+<!--end jionContent-->
+
+<view class="joinRelease">
+<image src="/images/photo.jpg"></image>
+<view class="release" bindtap="releaseSuccess">发布</view>
+</view>
+<!--end joinRelease-->
+
+<view class="signSuccessBox" wx:if="{{SuccessFlag}}">
+<view class="signSuccess">
+</view>
+<view class="SuccessImg">
+<image src="/images/success.png"></image>
+<text>\n发布成功</text>
+<text>\n成长值: +{{GrowthValue}}</text>
+</view>
+<!--end SuccessImg-->
+</view>
+</scroll-view>

@@ -1,0 +1,291 @@
+/* pages/information/information.wxss */
+@import "../../wxParse/wxParse.wxss";
+.priceMargin{
+    margin:0 55rpx
+}
+
+.head{
+    width: 688rpx;
+    height:81rpx;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 30rpx 32rpx 35rpx 30rpx;
+}
+.headLeftImgBox image{
+    width: 81rpx;
+    height: 81rpx;
+    padding-right: 22rpx; 
+}
+.headImgBoxRight{
+    width: 150rpx;
+    height: 71rpx;
+    position: relative;
+    top: -10rpx;
+}
+.author{
+    font-size: 32rpx;
+}
+.visitTime{
+    font-size: 20rpx;
+    color: #666666;
+    position: relative;
+    left: 0;
+    top: -35rpx;
+}
+.identity{
+    display: block;
+    font-size: 18rpx;
+    color: #fff;
+    text-align: center;
+    width: 66rpx;
+    height: 26rpx;
+    border-radius: 5px;
+    background-color: #1e8be8;
+    line-height: 26rpx;
+    position: relative;
+    left: 80rpx;
+    top: -35rpx;
+}
+.headRight{
+    width: 116rpx;
+    height: 56rpx;
+    background-color: #f8f8f8;
+    border: 2px solid #dfdfdf;
+    border-radius: 5rpx;
+    text-align: center;
+    line-height: 56rpx;
+    color: #444444;
+    font-size: 26rpx;
+}
+/*end head*/
+
+.inforContent{
+    width: 688rpx;
+    padding: 0 32rpx 30rpx 30rpx;
+    font-size: 32rpx;
+    line-height: 45rpx;
+}
+.inforContentTitle{
+    padding-top: 45rpx;
+    padding-bottom: 55rpx;
+    font-weight: bold;
+}
+.inforContentText image{
+    width: 675rpx;
+}
+
+.inforContentFoot{
+    width: 688rpx;
+    height: 47rpx;
+    color: #979797;
+    padding-top: 10rpx;
+}
+.inforContentFootLeft{
+    width: 600rpx;
+    height: 47rpx;
+}
+.inforContentFootLeft text{
+    height: 23rpx;
+    padding: 0 10rpx;
+    position: relative;
+    top: -3rpx;
+    left: 0;
+    line-height: 30rpx;
+}
+.inforContentFootRight{
+    width: 80rpx;
+    height: 47rpx;
+    font-size: 32rpx;
+}
+.read{
+    width: 185rpx;
+    height: 47rpx;
+    font-size: 32rpx;
+}
+.praise{
+    width: 172rpx;
+   font-size: 24rpx;  
+   height: 47rpx;  
+}
+.praise image{
+    width: 40rpx;
+    height: 40rpx;
+}
+.collect{
+    width: 110rpx;
+    font-size: 24rpx;
+    height: 47rpx;
+}
+.collect image{
+    width: 34rpx;
+    height: 34rpx;
+}
+/*end inforContent*/
+
+.prize{
+    width: 750rpx;
+    height: 160rpx;
+    text-align: center;
+    padding: 25rpx 0 15rpx;
+}
+.prize text{
+    color: #1e8be8;
+    padding-bottom: 18rpx;
+}
+.prizeBox{
+    width: 108rpx;
+    height: 108rpx;
+    border-radius: 108rpx;
+    background-color: #1e8be8;
+    color: #fff;
+    font-size: 54rpx;
+    text-align: center;
+    line-height: 108rpx;
+    position: relative;
+    left: 320rpx;
+}
+/*end prie*/
+
+.pricePage{
+    width: 639rpx;
+    height: 690rpx;
+    background-color: #fff;
+    position: fixed;
+    left: 55rpx;
+    top: 200rpx;
+    z-index: 100;
+    border-radius: 10rpx;
+}
+.pricePageTitle{
+    height: 143rpx;
+    line-height: 143rpx;
+    font-size: 41rpx;
+    text-align: center;
+}
+.pricePagePrice{
+    height: 432rpx;
+}
+.pricePagefoot{
+    height: 111rpx;
+    text-align: center
+}
+.pricePagefoot view{
+    width: 316rpx;
+    height: 111rpx;
+    float: left;
+    line-height: 111rpx;
+    border-top: 1rpx solid;
+    border-color:  #d2d3d5;
+}
+.priceSelect{
+    height: 253rpx;
+    padding: 0 55rpx;
+}
+.priceSelect view{
+    width: 137rpx;
+    height: 88rpx;
+    float: left;
+    margin-bottom: 34rpx;
+    text-align: center;
+    border-radius: 10rpx;
+    line-height: 88rpx;
+}
+
+.pricePagePrice input{
+   margin-bottom: 20rpx;
+   margin-left: 40rpx;
+   background-color: #ebebeb;
+   width: 443rpx;
+   height: 38rpx;
+   line-height: 90rpx;
+   font-size: 38rpx;
+   padding: 26rpx 58rpx;
+}
+.priceInputPoint{
+    font-size: 24rpx;
+    color: #bababa;
+    text-align: center;
+}
+.inputBox{
+    height: 177rpx;
+}
+/*end prizePage*/
+
+.comment{
+    width: 750rpx;
+}
+.commentTop{
+    width: 750rpx;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    padding: 37rpx 0 20rpx;
+    background-color: #f4f4f4;
+}
+.commentTop image{
+    width: 25rpx;
+    height: 26rpx;
+}
+.commentTop text{
+    border-left: 8rpx solid #1e8be8;
+    padding: 0 25rpx;
+}
+.commentContent{
+    width:690rpx;
+    height: auto;
+    padding: 25rpx 30rpx 20rpx; 
+    border-top: 1rpx solid #e5e5e5;
+}
+.headImg{
+    width: 95rpx;
+}
+.headImg image{
+    width: 74rpx;
+    height: 74rpx;
+}
+.headImgRight{
+    width: 595rpx;
+}
+.headImgRightTop{
+    width: 595rpx;
+    color: #979797;
+    height: 35rpx;
+}
+.headImgRightTop image{
+    width: 115rpx;
+    height: 26rpx;
+}
+.commentText{
+    width: 595rpx;
+    padding: 22rpx 0 17rpx;
+}
+.commentTime{
+    font-size: 24rpx;
+    color: #c0c0c0;
+}
+.commentTimeRight{
+    color: #666666;
+    font-size: 22rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    padding-bottom: 20rpx;
+}
+.commentTimeRight text{
+    position: relative;
+    bottom: 5rpx;
+}
+/*end comment*/
+
+.more{
+    width: 750rpx;
+    height: 94rpx;
+    border: 1px solid #e5e5e5;
+    color: #1e8be8;
+    font-size: 28rpx;
+    line-height: 94rpx;
+    padding-left: 12rpx;
+    text-align: center;
+}
+.more image{
+    width: 25rpx;
+    height: 16rpx;
+}
+/*end more*/

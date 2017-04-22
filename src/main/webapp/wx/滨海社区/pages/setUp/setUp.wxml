@@ -1,0 +1,72 @@
+<!--pages/setUp/setUp.wxml-->
+<scroll-view class="container" scroll-x="{{false}}" >
+
+<view style="height:40rpx;width:750rpx;border-bottom:1rpx solid #e5e5e5"></view>
+
+<view class="setUpList">
+<view class="setUpListLeft fl">头像</view>
+<!--end setUpListLeft-->
+<view class="setUpListRight fr">
+<image src="/images/head_img.jpg"></image>
+</view>
+<!--end setUpListRight-->
+</view>
+<!--end setUpList-->
+
+<view class="setUpList">
+<view class="setUpListLeft fl">昵称</view>
+<!--end setUpListLeft-->
+<view class="setUpListRight fr">
+<text>{{userName}}</text>
+</view>
+<!--end setUpListRight-->
+</view>
+<!--end setUpList-->
+
+<view class="setUpList">
+<view class="setUpListLeft fl">微信号</view>
+<!--end setUpListLeft-->
+<view class="setUpListRight fr">
+<text>{{wxNum}}</text>
+</view>
+<!--end setUpListRight-->
+</view>
+<!--end setUpList-->
+
+<view class="setUpList">
+<view class="setUpListLeft fl">简介</view>
+<!--end setUpListLeft-->
+<view class="setUpListRight fr">
+<text>{{introduction}}</text>
+</view>
+<!--end setUpListRight-->
+</view>
+<!--end setUpList-->
+
+<view style="height:19rpx;width:750rpx;border-bottom:1rpx solid #e5e5e5"></view>
+
+<view class="setUpList">
+<view class="setUpListLeft fl">性别</view>
+<!--end setUpListLeft-->
+<view class="setUpListRight fr">
+<text>{{sex}}</text>
+</view>
+<!--end setUpListRight-->
+</view>
+<!--end setUpList-->
+
+<view class="setUpList">
+<view class="setUpListLeft fl">生日</view>
+<!--end setUpListLeft-->
+<view class="setUpListRight fr">
+<text>{{birthday}}</text>
+</view>
+<!--end setUpListRight-->
+</view>
+<!--end setUpList-->
+
+<view class="setUpListFoot">
+<text class="fr">已绑定</text>
+</view>
+
+</scroll-view>

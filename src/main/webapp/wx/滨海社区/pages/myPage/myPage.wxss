@@ -1,0 +1,148 @@
+/* pages/myPage/myPage.wxss */
+
+page{
+    background-color: #f4f4f4;
+}
+
+.myCenter{
+    width: 750rpx;
+    height: 269rpx;
+    border-top: 40rpx solid #f4f4f4;
+    border-bottom: 19rpx solid #f4f4f4;
+    background-color: #fff;
+}
+.myCenterTop{
+    width: 750rpx;
+    height: 166rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+}
+.myCenterFoot{
+    width: 750rpx;
+    height: 80rpx;
+    border-bottom: 1rpx solid #f4f4f4;
+    padding-top: 23rpx;
+}
+.headImg{
+    width: 147rpx;
+    padding: 19rpx 0 20rpx 23rpx ;
+}
+.headImg view{
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 81rpx;
+    overflow: hidden;
+}
+.headImg image{
+    width: 128rpx;
+    height: 128rpx;
+}
+.infoList{
+    height: 107rpx;
+    padding-top: 39rpx;
+    padding-bottom: 20rpx;
+    color: #919191;
+    font-size: 24rpx;
+    line-height: 34rpx;
+}
+.infoList image{
+    position: absolute;
+    top: 80rpx;
+    left: 255rpx;
+    width: 155rpx;
+    height: 26rpx;
+}
+.arrowImgBox{
+    width: 60rpx;
+    height: 26rpx;
+    padding: 70rpx 0 70rpx 30rpx; 
+}
+.arrowImgBox image{
+    width: 16rpx;
+    height: 25rpx;
+}
+
+.post, .follow, .fans{
+    width: 250rpx;
+    height: 80rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #919191;
+}
+
+.number{
+    font-size: 28rpx;
+    color: #000;
+    font-weight: bold;
+}
+/*end myCenter*/
+
+.myLists{
+    width: 750rpx;
+    height: 119rpx;
+    background-color: #fff;
+}
+.myListsTop{
+    width: 700rpx;
+    height: 44rpx;
+    padding: 23rpx 22rpx 27rpx 33rpx;
+}
+.myListsFoot{
+    height:24rpx;
+    background-color:#f4f4f4;
+    border-top: 1rpx solid #e5e5e5;
+}
+.myListsImgBox{
+    height: 99rpx;
+    width: 80rpx;
+}
+.myListsImgBox image{
+    width: 50rpx;
+    height: 49rpx;
+}
+.myListsImg{
+    width: 25rpx;
+    height: 50rpx;
+}
+
+.myListsImg image{
+    width: 16rpx;
+    height: 25rpx;
+}
+/*end myLists*/
+
+.sign{
+    width: 690rpx;
+    height: 90rpx;
+    padding: 0 30rpx;
+}
+.sign view{
+    width: 690rpx;
+    height: 86rpx;
+    border: 1rpx solid #186fba;
+    background-color: #1e8be8;
+    border-radius: 20rpx;
+    color: #fff;
+    line-height: 86rpx;
+    text-align: center;
+    font-size: 36rpx;
+}
+/*end sign*/
+
+
+.myPageSignSuccess{
+  position: fixed;
+  left: 250rpx;
+  top: 800rpx;
+  width: 150px;
+  height: 150px;
+  background-color: black;
+  border-radius: 8px;
+  opacity: 0.5;
+}
+.myPageSign{
+    position: fixed;
+    left: 260rpx;
+    top: 920rpx;
+    color: #fff;
+}
+

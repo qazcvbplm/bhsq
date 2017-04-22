@@ -1,0 +1,34 @@
+<!--pages/replyPage/replyPage.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+
+<view class="jionContent">
+<view class="joinTitle">
+<text>{{articleTitle}}</text>
+</view>
+<!--end joinTitle-->
+<view class="joinText">
+<textarea  placeholder="欢迎有态度的评论，但是有态度不代表不友善哦~！" maxlength="-1" />
+</view>
+<!--end joinText-->
+</view>
+<!--end jionContent-->
+
+<view class="joinRelease">
+
+<view class="release" bindtap="releaseSuccess">回复</view>
+</view>
+<!--end joinRelease-->
+
+<view class="signSuccessBox" wx:if="{{SuccessFlag}}">
+<view class="signSuccess">
+</view>
+<view class="SuccessImg">
+<image src="/images/success.png"></image>
+<text>\n回复成功</text>
+<text>\n成长值: +{{GrowthValue}}</text>
+</view>
+<!--end SuccessImg-->
+</view>
+</scroll-view>
+

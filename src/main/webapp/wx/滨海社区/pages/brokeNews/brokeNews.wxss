@@ -1,0 +1,170 @@
+/* pages/brokeNews/brokeNews.wxss */
+.breakNews{
+  width: 687rpx;
+  height: 81rpx;
+  padding: 35rpx 33rpx 33rpx 30rpx;
+}
+.breakImgBox image{
+  width: 82rpx;
+  height: 82rpx;
+  padding-right: 15rpx;
+}
+.breakText{
+  width: 180rpx;
+  height: 82rpx;
+}
+.join{
+  width: 120rpx;
+  height: 60rpx;
+  background-color: #1e8be8;
+  color: #fff;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin: 10rpx 0;
+  font-size: 26rpx;
+}
+/*end breakNews*/
+
+.newsTop{
+  width: 690rpx;
+  height: 34rpx;
+  padding: 27rpx 30rpx 26rpx 30rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.newsTopImg image{
+  width: 34rpx;
+  height: 34rpx;
+  padding-right: 17rpx;
+}
+.newsTopText{
+  width: 639rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  font-size: 32rpx;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  white-space:nowrap;
+}
+
+/*end newsTop*/
+
+
+.breakNewsTop{
+  width: 750rpx;
+  height: 82rpx;
+  font-size: 24rpx;
+  padding-top: 17rpx;
+}
+.reply,.release{
+  width: 344rpx;
+  text-align: center;
+  padding-bottom: 12rpx;
+}
+.reply{
+  padding-left: 30rpx;
+}
+.active{
+  color: #1e8be8;
+  border-bottom: 5rpx solid #1e8be8;
+}
+.release{
+  padding-right: 30rpx;
+}
+.reply text{
+  width: 347rpx;
+  height: 65rpx;
+  display: block;
+  line-height: 65rpx;
+  border-right: 1px solid #e5e5e5;
+}
+.release text{
+  width: 347rpx;
+  height: 65rpx;
+  display: block;
+  line-height: 65rpx;
+}
+
+/*end breakNewsTop*/
+
+.replyContent{
+  width: 690rpx;
+  padding: 0 30rpx;
+}
+.replyContentTop{
+  height: 96rpx;
+  padding-top: 35rpx;
+}
+.headImgBox{
+  height: 86rpx;
+  width: 86rpx;
+  border-radius: 86rpx;
+  overflow: hidden;
+}
+.headImgBox image{
+  width: 86rpx;
+  height: 86rpx;
+
+}
+.headImgBoxRight{
+  width: 100rpx;
+  height: 86rpx;
+  text-align: center;
+  padding-left: 22rpx;
+  line-height: 45rpx;
+  }
+
+  .concern{
+   font-size: 26rpx;
+   width: 120rpx;
+   height: 60rpx;
+   border-radius: 10rpx;
+   border:1rpx solid #dfdfdf;
+   text-align: center;
+   line-height: 60rpx;
+  }
+
+.replyContentTitle{
+  padding-top: 35rpx;
+  font-size: 34rpx;
+  line-height: 45rpx;
+  font-weight: bold;
+}
+
+.replyContentText{
+  font-size: 28rpx;
+  padding-top: 27rpx;
+  line-height: 45rpx;
+}
+.replyContentImg{
+  padding-top: 25rpx;
+}
+.replyContentImg image{
+  width: 223rpx;
+  height: 176rpx;
+}
+
+.replyContentFoot{
+  width: 275rpx;
+  height: 29rpx;
+  padding-top: 37rpx;
+  padding-bottom: 35rpx;
+}
+.replyContentFoot image{
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 10rpx;
+}
+.replyContentFoot view{
+  width: 91rpx;
+  height: 30rpx;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  color: #979797;
+}
+.replyContentFoot text{
+  position: relative;
+  top: -5rpx;
+}
+/*end replyContent*/
+

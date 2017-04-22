@@ -1,0 +1,46 @@
+/* pages/messages/messages.wxss */
+page{
+    background-color: #f4f4f4;
+}
+
+.messageList{
+    width: 690rpx;
+    height: 76rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+    margin-top: 20rpx;
+    padding: 11rpx 30rpx;
+}
+.messageImg{
+    width: 100rpx;
+    height: 75rpx;
+}
+.messageImg image{
+    width: 75rpx;
+    height: 75rpx;
+}
+.messageText{
+    width: 150rpx;
+    height: 75rpx;
+    line-height: 75rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+.messageNumBox{
+    width: 150rpx;
+    height: 35rpx;
+    padding: 20rpx 0;
+}
+.messageNum{
+    width: 36rpx;
+    height: 36rpx;
+    line-height: 32rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #fff;
+    background-color: #f12c20;
+    border-radius: 36rpx;
+    text-align: center;
+    }
+/*end messageList*/

@@ -1,0 +1,55 @@
+<!--pages/publish/publish.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<view class="jionContent">
+<view class="joinTitle">
+<input  placeholder="请输入标题"  />
+</view>
+<!--end joinTitle-->
+<view class="joinText">
+<textarea bindblur="wordRemind"   placeholder="试试图文穿插自由排版吧，观看效果会更好哟！" maxlength="-1" />
+</view>
+<!--end joinText-->
+</view>
+<!--end jionContent-->
+
+<view class="section">
+<view class="sectionTitle">
+<text>选择版块</text>
+<image class="fr"  bindtap="selectimage"  src="/images/photo.jpg"></image>
+</view>
+<!--end sectionTitle-->
+<view class="sectionList">
+<block wx:for="{{sectionText}}">
+<text class="fl {{sectionListflag==index?'sectionListSelect':'sectionListBorder'}}" id="{{index}}" bindtap="sectionListChange">{{item}}</text>
+</block>
+</view>
+<!--end sectionList-->
+</view>
+<!--end section-->
+
+<view class="joinRelease">
+<view class="release" bindtap="{{releaseFlag?'releaseSuccess':''}}" >发布</view>
+</view>
+<!--end joinRelease-->
+
+<view class="signSuccessBox" wx:if="{{SuccessFlag}}">
+<view class="signSuccess">
+</view>
+<view class="SuccessImg">
+<image src="/images/success.png"></image>
+<text>\n发布成功</text>
+<text>\n成长值: +{{GrowthValue}}</text>
+</view>
+</view>
+<!--end SuccessImg-->
+
+
+<view class="signSuccessBox" wx:if="{{showMessage}}">
+<view class="signSuccess">
+</view>
+<text class="showMessage">亲，帖子写的有点短，多写几个字呦~</text>
+</view>
+<!--end SuccessImg-->
+
+</scroll-view>

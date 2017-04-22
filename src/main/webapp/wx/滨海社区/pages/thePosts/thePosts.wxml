@@ -1,0 +1,146 @@
+<!--pages/thePosts/thePosts.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<view class="thePostsTop">
+
+<view class="thePostsTopLeft {{thePostsFlag?'active':''}} fl" bindtap="{{thePostsFlag?'':'clickChange'}}">
+<text>我的帖子</text>
+</view>
+
+<view class="thePostsTopRight {{thePostsFlag?'':'active'}} fr" bindtap="{{thePostsFlag?'clickChange':''}}">我的回复</view>
+
+</view>
+<!--end thePostsTop-->
+
+
+<view hidden="{{!thePostsFlag}}">
+
+
+<view class="newsBoxThree">
+
+<view class="newsTopThree">
+
+<view class="newsTopImg fl"><image src="/images/head_img.jpg"></image></view>
+<view class="headImgBoxRight fl">
+<view style="font-size:32rpx;">张三</view>
+<view style="color:#666666;font-size:24rpx;">1小时前</view>
+</view>
+</view>
+<!--end newsTopThree-->
+
+
+<view class="newsTitleThree">
+<text>为什么我在近十几年里所接触的日本动画渐渐发生了转型？</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsTextThree">
+<text>本人90后，可以说是深受日本动画影响的一代。看了大部分的影响。</text>
+</view>
+<!--end newsText-->
+
+<view class="newsPicThree">
+<image src="/images/1_05.jpg"></image>
+<image src="/images/1_05.jpg"></image>
+<image src="/images/1_05.jpg"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">我要爆料</view>
+<view class="praiseBoxThree fr"><image style="width:32rpx;height:20rpx;margin-right:10rpx" src="/images/eye.jpg"></image>555</view>
+<view class="speakBoxThree fr"><image style="width:29rpx;height:23rpx;margin-right:10rpx" src="/images/speak.jpg"></image>555</view>
+<view class="praiseBoxThree fr"><image style="width:39rpx;height:39rpx;margin-right:10rpx" src="/images/praise.jpg"></image>555</view>
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxThree-->
+
+
+
+<view class="newsBoxTwo">
+
+<view class="newsTopThree">
+
+<view class="newsTopImg fl"><image src="/images/head_img.jpg"></image></view>
+<view class="headImgBoxRight fl">
+<view style="font-size:32rpx;">张三</view>
+<view style="color:#666666;font-size:24rpx;">1小时前</view>
+</view>
+</view>
+<!--end newsTopThree-->
+
+<view class="newsTitleThree">
+<text>为什么我在近十几年里所接触的日本动画渐渐发生了转型？</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsTextThree">
+<text>本人90后，可以说是深受日本动画影响的一代。看了大部分的影响。</text>
+</view>
+<!--end newsText-->
+
+<view class="newsPicTwo">
+<image src="/images/1_05.jpg"></image>
+<image src="/images/1_05.jpg"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">我要爆料</view>
+<view class="praiseBoxThree fr"><image style="width:32rpx;height:20rpx;margin-right:10rpx" src="/images/eye.jpg"></image>555</view>
+<view class="speakBoxThree fr"><image style="width:29rpx;height:23rpx;margin-right:10rpx" src="/images/speak.jpg"></image>555</view>
+<view class="praiseBoxThree fr"><image style="width:39rpx;height:39rpx;margin-right:10rpx" src="/images/praise.jpg"></image>555</view>
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxTwo-->
+
+
+</view>
+<!--我的帖子-->
+
+
+<view hidden="{{thePostsFlag}}">
+
+<block wx:for="{{myReply}}">
+
+<view class="myReply" id="{{index}}">
+<view class="replyContentTop">
+<view class="headImgBox fl"><image src="/images/head_img.jpg"></image></view>
+<view class="headImgBoxRight fl">
+<view style="font-size:32rpx;">{{item.name}}</view>
+<view style="color:#666666;font-size:24rpx;">1小时前</view>
+</view>
+<view  class="concern fr" bindtap="concernCancel">{{myReply[index].concern}}</view>
+</view>
+<!--end replyContentTop-->
+
+<view class="myReplyMid">
+<view class="myReplyText"><text>回复我的：这种生姜是用特殊药水处理过的，你买的时候千万要看,你买的时候千万要看</text></view>
+<view class="ReplyText">都不敢吃了</view>
+</view>
+<!--end myReplyMid-->
+
+<view class="myReplyFoot">
+
+<view class="speakBox fr"><image style="width:29rpx;height:23rpx;margin-right:10rpx" src="/images/speak.jpg"></image>555</view>
+
+<view class="praiseBox fr"><image style="width:39rpx;height:39rpx;margin-right:10rpx" src="/images/praise.jpg"></image>555</view>
+
+</view>
+<!--end myReplyFoot-->
+</view>
+<!--end myReply-->
+</block>
+
+</view>
+<!--我的回复-->
+
+
+
+</scroll-view>

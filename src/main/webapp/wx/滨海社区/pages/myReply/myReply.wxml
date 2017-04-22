@@ -1,0 +1,30 @@
+<!--pages/myReply/myReply.wxml-->
+<scroll-view class="container" scroll-x="{{false}}" bindscroll="change" bindscrolltolower="change">
+
+<block wx:for="{{myReply}}">
+
+<view class="myReply" >
+<view class="replyContentTop">
+<view class="headImgBox fl"><image src="/images/head_img.jpg"></image></view>
+<view class="headImgBoxRight fl">
+<view style="font-size:32rpx;">{{item.name}}</view>
+<view style="color:#666666;font-size:24rpx;">01-20 13:18</view>
+</view>
+<view id="{{index}}" class="concern fr" bindtap="concernCancel">{{myReply[index].concern}}</view>
+</view>
+<!--end replyContentTop-->
+
+<view class="myReplyMid">
+<view class="myReplyText"><text>回复我的：这种生姜是用特殊药水处理过的，你买的时候千万要看,你买的时候千万要看</text></view>
+<view class="ReplyText">都不敢吃了</view>
+</view>
+<!--end myReplyMid-->
+
+<view class="myReplyFoot">
+<text>回复</text>
+</view>
+<!--end myReplyFoot-->
+</view>
+<!--end myReply-->
+</block>
+</scroll-view>

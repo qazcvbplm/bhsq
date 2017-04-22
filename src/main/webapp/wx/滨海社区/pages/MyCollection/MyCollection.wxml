@@ -1,0 +1,83 @@
+<!--pages/MyCollection/MyCollection.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<view class="newsBoxThree">
+
+<view class="newsTitleThree">
+<text>滨海县通榆舀港三天一集，严重影响张沟、陈铸、正红15万人通行。</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicThree">
+<image src="/images/1_05.jpg"></image>
+<image src="/images/1_05.jpg"></image>
+<image src="/images/1_05.jpg"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">张三</view>
+<view class="readNumThree fl">阅读1313</view>
+<view class="publistTimeThree fr">5小时前</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxThree-->
+
+
+
+<view class="newsBoxTwo">
+
+<view class="newsTitleThree">
+<text>滨海县通榆舀港三天一集，严重影响张沟、陈铸、正红15万人通行。</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicTwo">
+<image src="/images/1_05.jpg"></image>
+<image src="/images/1_05.jpg"></image>
+</view>
+<!--end newsPic-->
+
+<view class="newsFootThree">
+
+<view class="newsAuthorThree fl">张三</view>
+<view class="readNumThree fl">阅读1313</view>
+<view class="publistTimeThree fr">5小时前</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxTwo-->
+
+
+<view class="newsBoxOne">
+<view style="padding:0 30rpx;">
+<view class="newsTitleOne fl">
+<text>滨海县通榆舀港三天一集，严重影响张沟、陈铸、正红15万人通行。</text>
+</view>
+<!--end newsTitle-->
+
+<view class="newsPicOne fr">
+<image src="/images/1_05.jpg"></image>
+</view>
+<!--end newsPic-->
+</view>
+<view class="newsFootThree clear">
+
+<view class="newsAuthorThree fl">张三</view>
+<view class="readNumThree fl">阅读1313</view>
+<view class="publistTimeThree fr">5小时前</view>
+
+</view>
+<!--end newsFoot-->
+
+</view>
+<!--end newsBoxOne-->
+
+
+</scroll-view>

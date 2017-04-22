@@ -1,0 +1,40 @@
+<!--pages/myFollow/myFollow.wxml-->
+<scroll-view class="container" scroll-x="{{false}}" >
+
+<view class="myFansTop">
+<text style="padding-right:30rpx;">全部关注</text>
+<text>345</text>
+</view>
+<!--end myFansTop-->
+
+
+<block wx:for="{{[1,2,3,4]}}">
+
+<view class="myFansList">
+
+<view class="myCenterTop">
+<view class="headImg fl">
+<view><image src="/images/head_img.jpg"></image></view>
+</view>
+<!--end headImg-->
+<view class="infoList fl">
+<text style="font-size:34rpx;font-weight:bold;color:#000">张三\n</text>
+
+<text>简介：我很好</text>
+</view>
+<!--end infoList-->
+<view class="arrowImgBox fr">
+<view style="padding:0 21rpx"><image src="{{false?'/images/cancelFans.jpg':'/images/addFans.jpg'}}"></image></view>
+<view>{{false?'取消关注':'关注'}}</view>
+</view>
+<!--end arrowImgBox-->
+</view>
+<!--end myCenterTop-->
+
+</view>
+<!--end myFansList-->
+</block>
+
+
+</scroll-view>
+

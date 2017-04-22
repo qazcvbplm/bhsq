@@ -1,0 +1,59 @@
+/* pages/systemNotice/systemNotice.wxss */
+page{
+    background-color: #f4f4f4;
+}
+
+.myConcernBox{
+    min-height: 220rpx;
+    width: 678rpx;
+    padding: 0 36rpx 20rpx;
+}
+
+.timeBox{
+    width: 678rpx;
+    height: 88rpx;
+    color: #666666;
+    font-size: 28rpx;
+    line-height: 88rpx;
+    text-align: center;
+}
+.myConcernFoot{
+    height: 120rpx;
+    width: 678rpx;
+}
+.headImg{
+    width: 106rpx;
+}
+
+.headImgBox{
+    width: 86rpx;
+    height: 86rpx;
+    border-radius: 86rpx;
+    overflow: hidden;
+}
+.headImgBox image{
+    width: 86rpx;
+    height: 86rpx;
+}
+
+.messageBox{
+    width: 383rpx;
+    background-color: #fff;
+    border: 1rpx solid #e7e7e7;
+    border-radius: 15rpx;
+    padding: 25rpx 37rpx 20rpx 16rpx ;
+    font-size: 30rpx;
+    color: #666666;
+    
+}
+
+.arrow {
+width:0;
+height:0;
+font-size:0;
+border:solid 10px;
+border-color:transparent  #fff transparent  transparent ;
+position:relative;
+left: 75rpx;
+top: 27rpx;
+}

@@ -1,0 +1,106 @@
+<!--pages/community/community.wxml-->
+
+<view class="communityPoint">
+
+<swiper bindchange="swiperChange">
+
+<swiper-item class="focusIcon">
+
+<block wx:for="{{icon1}}">
+<view class="iconList" bindtap="brokeNews"> 
+<image mode="aspectFill" class="iconImg" src="{{item.img}}"></image>
+<text>\n{{item.text}}</text>
+</view>
+</block>
+
+</swiper-item>
+
+<swiper-item class="focusIcon">
+
+<block wx:for="{{icon2}}">
+<view class="iconList" bindtap="brokeNews"> 
+<image mode="aspectFill" class="iconImg" src="{{item.img}}"></image>
+<text>\n{{item.text}}</text>
+</view>
+</block>
+
+</swiper-item>
+
+<!--</block>-->
+
+</swiper>
+
+ <view class="dotsOne">
+  <block wx:for="{{[1,2]}}">
+   <view class="dotOne {{index == swiperCurrent ? ' activeOne' : ''}}"></view>
+  </block>
+ </view>
+
+</view>
+<!--end communityPoint-->
+
+<view style=" width: 750rpx;height: 411rpx;"></view>
+
+<view class="communityFocus">
+
+<view class="swiper-container">
+ <swiper autoplay="auto"interval="5000"duration="500"current="{{communityFocusCurrent}}"bindchange="communityFocusChange">
+  <block wx:for="{{slider}}">
+   <swiper-item>
+    <image src="{{item}}" mode="scaleToFill" class="focusImg"></image>
+   </swiper-item>
+  </block>
+ </swiper>
+  
+ <view class="dots">
+  <block wx:for="{{slider}}">
+   <view class="dot{{index == communityFocusCurrent ? ' activeO' : ''}}"></view>
+  </block>
+ </view>
+</view>
+<!--end swiper-container-->
+
+</view>
+<!--end communityFocus-->
+
+
+<view class="breakNewsTop">
+<view class="reply {{replyAvtive?'active':''}} fl" bindtap="{{replyAvtive?'':'active'}}"><text>整个圈子</text></view>
+<view class="release {{releaseAvtive?'active':''}} fr " bindtap="{{releaseAvtive?'':'active'}}"><text>我关注的</text></view>
+</view>
+<!--end breakNewsTop-->
+
+<view class="replyContent">
+<view class="replyContentTop">
+<view class="headImgBox fl"><image src="/images/head_img.jpg"></image></view>
+<view class="headImgBoxRight fl">
+<view style="font-size:32rpx;">张三</view>
+<view style="color:#666666;font-size:24rpx;">1小时前</view>
+</view>
+<view class="concern fr" bindtap="concernCancel">{{concernCancelflag?'+ 关注':'取消关注'}}</view>
+</view>
+<!--end replyContentTop-->
+
+<view class="replyContentTitle">
+为什么我在近十几年里所接触的日本动画渐渐发生了转型？
+</view>
+<!--end replyContentTitle-->
+
+<view class="replyContentText">
+本人90后，可以说是深受日本动画影响的一代。看了大部分的影响。
+</view>
+<!--end replyContentText-->
+<view class="replyContentImg">
+<image src="/images/01.jpg"></image>
+<image style="padding: 0 8rpx" src="/images/01.jpg"></image>
+<image src="/images/01.jpg"></image>
+</view>
+<!--end replyContentImg-->
+<view class="replyContentFoot fr">
+<view class="fl"><image src="/images/zhan.jpg"></image><text>5</text></view>
+<view class="fl"><image src="/images/speak.jpg"></image><text>5</text></view>
+<view class="fl"><image src="/images/eye.jpg"></image><text>55</text></view>
+</view>
+<!--end replyContentFoot-->
+</view>
+<!--end replyContent-->

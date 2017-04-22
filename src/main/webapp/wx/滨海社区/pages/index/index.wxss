@@ -1,0 +1,229 @@
+/**index.wxss**/
+page{
+    background-color: #f4f4f4;
+}
+
+.focusImg{
+  width: 100%;
+  height: 125px;
+}
+.swiper-container{
+ position: relative;
+}
+.swiper-container .swiper{
+ height: 300rpx;
+}
+.swiper-container .swiper .img{
+ width: 100%;
+ height: 100%;
+}
+.swiper-container .dots{
+ position: absolute;
+ left: 0;
+ right: 0;
+ bottom: 20rpx;
+ display: flex;
+ justify-content: center;
+}
+.swiper-container .dots .dot{
+ margin: 0 8rpx;
+ width: 14rpx;
+ height: 14rpx;
+ background:#ccc;
+ border-radius: 8rpx;
+ transition: all .6s;
+}
+.swiper-container .dots .dot.active{
+ background:#fff;
+}
+/*end swiper-container*/
+
+.focusIcon{
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+}
+.iconList{
+  width: 25%;
+  height: 75px;
+  padding-top: 20px;
+  float: left;
+  font-size: 16px;
+  font-family: '冬青黑体简体中文';
+  text-align: center;
+}
+.iconImg{
+  width: 81rpx;
+  height: 81rpx;
+}
+/*end focusIcon*/
+
+.handLineTitle{
+  width: 100%;
+  padding: 5px 0;
+  height: 30px;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #f4f4f4;
+}
+.handLineTitle view{
+  line-height: 30px;
+  font-size: 16px;
+  border-left: 5px solid #1e8be8;
+  text-indent: 10px;
+}
+/*end handLineTitle*/
+
+.newsBoxThree,.newsBoxTwo,.newsBoxOne{
+    width: 750rpx;
+    margin-top: 19rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+
+}
+
+.newsTitleThree{
+    font-size: 34rpx;
+    padding: 43rpx 30rpx 0;
+}
+
+.newsPicThree,.newsPicTwo{
+    padding: 38rpx 30rpx 0;
+}
+.newsPicThree image{
+    width: 225rpx;
+    height: 176rpx;
+    margin-right: 7rpx;
+}
+/*end .newsPicThree*/
+
+.newsPicTwo image{
+    width: 337rpx;
+    height: 197rpx;
+    margin-right: 8rpx;
+}
+/*end newsPicTwo*/
+.newsFootThree{
+    height: 69rpx;
+    line-height: 69rpx;
+    color: #666666;
+    padding: 0 30rpx;
+    font-size: 22rpx;
+}
+.newsAuthorThree{
+    width: 145rpx;
+}
+
+/*end newsBoxThree*/
+.newsBoxOne{
+    padding-top: 38rpx; 
+}
+
+.newsTitleOne{
+    width: 353rpx;
+    height: 202rpx;
+}
+.newsPicOne{
+    width: 337rpx;
+    height: 202rpx;
+}
+.newsPicOne image{
+    width: 337rpx;
+    height: 202rpx;
+}
+.newsTitleOne text{
+    overflow:hidden;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient:vertical;
+    word-break:break-all;
+}
+/*end newsBoxOne*/
+
+
+/*end handLine*/
+
+.talkingsConter{
+  width: 720rpx;
+  padding-top: 15px;
+  background-color: #fff;
+  padding-left: 30rpx;
+}
+.talkings{
+  text-align: center;
+  width: 30%;
+  padding-right: 2%;
+  font-size: 14px;
+  float: left;
+  line-height: 16px;
+  padding-bottom: 10px;
+}
+.talkingsImg{
+   width: 100%;
+   height: 80px;
+   padding-bottom: 10px;
+}
+
+/*end talkingsConter*/
+
+
+.signBot{
+  width: 200px;
+  height: 200px;
+  background-color: #1e8be8;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  border-radius: 200px;
+}
+.signtop{
+  width: 150px;
+  height: 150px;
+  background-color: #fff;
+  position: absolute;
+  left: 13%;
+  top: 13%;
+  border-radius: 200px;
+  z-index: 100;
+  text-align: center;
+   font-family: '冬青黑体简体中文';
+  }
+  .signtop view{
+    position: relative;
+    top: 10%;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .closeSign{
+    position: relative;
+    left: 90%;
+    top: 5%;
+  }
+  .closeSign image{
+    width: 30px;
+    height: 30px;
+  }
+  /*end signBox*/
+
+.dotsOne{
+ position: relative;
+ left: 0;
+ right: 0;
+ bottom: 30rpx;
+ display: flex;
+ justify-content: center;
+}
+.dotsOne .dotOne{
+ margin: 0 8rpx;
+ width: 14rpx;
+ height: 14rpx;
+ background-color:#888888;
+ border-radius: 8rpx;
+ transition: all .6s;
+}
+.dotsOne .dotOne.activeOne{
+ background:#000;
+}
+/*end .dotsOne*/
+

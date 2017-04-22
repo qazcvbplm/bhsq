@@ -1,0 +1,62 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/information/information",
+    "pages/brokeNews/brokeNews",
+    "pages/joinPage/joinPage",
+    "pages/community/community",
+    "pages/publish/publish",
+    "pages/replyPage/replyPage",
+    "pages/myPage/myPage",
+    "pages/setUp/setUp",
+    "pages/messages/messages",
+    "pages/rewardRecord/rewardRecord",
+    "pages/MyCollection/MyCollection",
+    "pages/myReply/myReply",
+    "pages/myPraise/myPraise",
+    "pages/myConcern/myConcern",
+    "pages/systemNotice/systemNotice",
+    "pages/thePosts/thePosts",
+    "pages/myFans/myFans",
+    "pages/myFollow/myFollow",
+    "pages/othersIndex/othersIndex"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#1e8be8",
+    "navigationBarTitleText": "滨海社区首页",
+    "navigationBarTextStyle":"#fff"
+  },
+  "tabBar": {
+    "color": "#919191",
+    "backgroundColor": "#fcfcfc",
+    "borderStyle": "white",
+    "selectedColor": "#1e8be8",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index.jpg",
+        "selectedIconPath": "/images/index_active.jpg"
+      },
+      {
+        "pagePath": "pages/community/community",
+        "text": "滨海圈",
+        "iconPath": "/images/binhai.jpg",
+        "selectedIconPath": "/images/binhai_active.jpg"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "发布",
+        "iconPath": "/images/release.jpg",
+        "selectedIconPath": "/images/release_active.jpg"
+      },
+      {
+        "pagePath": "pages/myPage/myPage",
+        "text": "我的",
+        "iconPath": "/images/me.jpg",
+        "selectedIconPath": "/images/me_active.jpg"
+      }
+    ]
+  }
+}

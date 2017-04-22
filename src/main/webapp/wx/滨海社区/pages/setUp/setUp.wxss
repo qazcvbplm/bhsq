@@ -1,0 +1,42 @@
+/* pages/setUp/setUp.wxss */
+
+page{
+    background-color: #f4f4f4;
+}
+
+.setUpList{
+    height: 98rpx;
+    width: 690rpx;
+    padding: 0 30rpx;
+    background-color: #fff;
+    border-bottom:1rpx solid #e5e5e5
+}
+.setUpListLeft{
+    width: 160rpx;
+    height: 98rpx;
+    line-height: 98rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+}
+.setUpListRight{
+    height: 90rpx;
+    padding-top: 8rpx;
+}
+.setUpListRight image{
+    width: 81rpx;
+    height: 81rpx;
+}
+.setUpListRight text{
+    font-size: 26rpx;
+    color: #666666;
+    line-height: 90rpx;
+}
+.setUpListFoot{
+    height: 81rpx;
+    width: 690rpx;
+    padding: 65rpx 30rpx 0 30rpx;
+}
+.setUpListFoot text{
+    color: #ffffff;
+    font-size: 18rpx;
+}

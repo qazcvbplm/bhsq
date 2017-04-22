@@ -1,0 +1,25 @@
+<!--pages/systemNotice/systemNotice.wxml-->
+<scroll-view class="container" scroll-x="{{false}}">
+
+<block wx:for="{{[1,2,3,4]}}">
+
+<view class="myConcernBox fl">
+<view class="timeBox">01-20 13:18</view>
+<view class="myConcernFoot">
+
+<view class="headImg fl">
+<view class="headImgBox"><image src="/images/head_img.jpg"></image></view>
+</view>
+<!--end headImg-->
+<view class="messageBox fl">
+新朋友，你好！欢迎来到滨海社区小程序！新朋友，你好！欢迎来到滨海社区小程序！新朋友，你好！欢迎来到滨海社区小程序！新朋友，你好！欢迎来到滨海社区小程序！新朋友，你好！欢迎来到滨海社区小程序！新朋友，你好！欢迎来到滨海社区小程序！新朋友，你好！欢迎来到滨海社区小程序！</view>
+<view class="arrow"></view>
+</view>
+<!--end myConcernFoot-->
+</view>
+<!--end myConcernBox-->
+
+</block>
+
+</scroll-view>
+

@@ -1,0 +1,201 @@
+/* pages/thePosts/thePosts.wxss */
+
+page{
+    background-color: #f4f4f4;
+}
+
+.thePostsTop{
+    width:750rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+    font-size: 24rpx;
+    color: #666666;
+    padding-top: 16rpx;
+    background-color: #fff;
+}
+.thePostsTopLeft{
+    width: 378rpx;
+    height: 80rpx;
+}
+.thePostsTopLeft text{
+    height: 65rpx;
+    border-right: 1rpx solid #e5e5e5;
+    display: block;
+}
+.thePostsTopRight{
+    width: 371rpx;
+    height: 80rpx;
+}
+
+.active{
+    border-bottom: 5rpx solid #1e8be8;
+    color: #1e8be8;
+}
+/*end thePostsTop*/
+
+
+.newsBoxThree,.newsBoxTwo,.newsBoxOne{
+    width: 750rpx;
+    margin-bottom: 19rpx;
+    background-color: #fff;
+    border-top: 1rpx solid #e5e5e5;
+    border-bottom: 1rpx solid #e5e5e5;
+
+}
+.newsTopThree{
+    height: 80rpx;
+    padding: 34rpx 30rpx 0;
+}
+.newsTopImg{
+    width: 87rpx;
+    height: 87rpx;
+    border-radius: 87rpx;
+    overflow: hidden;
+}
+
+.newsTopImg image{
+    width: 87rpx;
+    height: 87rpx;
+}
+.newsTitleThree{
+    font-size: 34rpx;
+    padding: 43rpx 30rpx 0;
+}
+.newsTextThree{
+    font-size: 34rpx;
+    padding: 15rpx 30rpx 0;
+}
+.newsTitleThree text{
+    font-weight: bold;
+}
+
+.newsPicThree,.newsPicTwo{
+    padding: 38rpx 30rpx 0;
+}
+.newsPicThree image{
+    width: 225rpx;
+    height: 176rpx;
+    margin-right: 7rpx;
+}
+/*end .newsPicThree*/
+
+.newsPicTwo image{
+    width: 337rpx;
+    height: 197rpx;
+    margin-right: 8rpx;
+}
+/*end newsPicTwo*/
+.newsFootThree{
+    height: 69rpx;
+    line-height: 69rpx;
+    color: #666666;
+    padding: 0 30rpx;
+    font-size: 22rpx;
+}
+
+.speakBoxThree,.praiseBoxThree{
+    width: 100rpx;
+    height: 50rpx;
+    padding: 8rpx 10rpx 0 0 ;
+
+}
+.speakBoxThree{
+    padding-top: 10rpx;
+}
+
+.newsAuthorThree{
+    width: 145rpx;
+}
+
+/*end newsBoxThree*/
+
+
+/*我的帖子*/
+
+
+.myReply{
+    width: 690rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    padding: 52rpx 30rpx 40rpx;
+}
+
+.replyContentTop{
+  height: 96rpx;
+}
+.headImgBox{
+  height: 86rpx;
+  width: 86rpx;
+  border-radius: 86rpx;
+  overflow: hidden;
+}
+.headImgBox image{
+  width: 86rpx;
+  height: 86rpx;
+
+}
+.headImgBoxRight{
+  width: 200rpx;
+  height: 86rpx;
+  padding-left: 22rpx;
+  line-height: 45rpx;
+  }
+
+  .concern{
+   font-size: 26rpx;
+   width: 120rpx;
+   height: 60rpx;
+   border-radius: 10rpx;
+   border:1rpx solid #dfdfdf;
+   text-align: center;
+   line-height: 60rpx;
+  }
+
+  /*end replyContentTop*/
+
+.myReplyMid{
+  padding-left: 100rpx;
+  width: 570rpx;
+  padding-top: 20rpx;
+  font-size: 32rpx;
+}
+.myReplyText{
+  height: 81rpx;
+  width: 540rpx;
+  background-color: #f4f4f4;
+  padding: 28rpx 25rpx 35rpx;
+
+}
+.myReplyText text{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  color: #b2b2b2;
+}
+.ReplyText{
+  padding: 10rpx 0;
+}
+/*end myReplyMid*/
+
+.myReplyFoot{
+  width: 690rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  color: #979797;
+}
+.speakBox,.praiseBox{
+    width: 100rpx;
+    height: 50rpx;
+    padding-right: 25rpx;
+
+}
+.speakBox{
+        padding-top: 10rpx;
+}
+/*end myReplyFoot*/
+
+/*end myReply*/
+/*我的回复*/
