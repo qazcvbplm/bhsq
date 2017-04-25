@@ -22,7 +22,7 @@
     count(*)
     from ship
     where type=#{type}
-    <if test="userid!=null">
+    <if test="articleid!=null">
     and articleid=#{articleid}
         </if>
     <if test="userid!=null">

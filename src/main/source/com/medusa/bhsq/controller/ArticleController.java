@@ -3,6 +3,8 @@ package com.medusa.bhsq.controller;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -258,6 +260,7 @@ public class ArticleController {
               Article temp=new Article();
               temp.setVisitor(a.getVisitor()+1);
               temp.setId(id);
+              //增加访问量
               articleMapper.updateByPrimaryKeySelective(temp);
               boolean scb=true;
               boolean gzb=true;
@@ -266,17 +269,28 @@ public class ArticleController {
 	          map.put("type", Result.ZAN);
 	    	  map.put("articleid", id);
 	    	  map.put("userid", userid);
+	    	  //查询文章我是否赞过
     		  int zan=shipMapper.findshipcount(map);
     		  if(zan==0)
     		  zanb=false;
-              List<Article> replace=articleMapper.findreplace(id);
+    		  //查询所有回复
+    		  List<Article> replace=new ArrayList<Article>();
+              List<Article> re=articleMapper.findreplace(id);
+              dj(re,userid,replace);
+              Collections.sort(replace, new Comparator<Article>() {
+				public int compare(Article o1, Article o2) {
+					return o1.getTime().compareTo(o2.getTime());
+				}
+              });
+              //查询我是否收藏
               Map<String,Object> map2=new HashMap<String, Object>();
               map2.put("type", Result.SC);
               map2.put("articleid", a.getId());
               map2.put("userid", userid);
               int sc=shipMapper.findshipcount(map2);
               if(sc==0)
-              scb=false;  
+              scb=false; 
+              //查询我是否关注
               Map<String,Object> map3=new HashMap<String, Object>();
               map3.put("type", Result.GZ);
               map3.put("articleid", a.getUserid());
@@ -292,8 +306,50 @@ public class ArticleController {
               AjaxUtil.PrintArrayClass(rep, rs);
     }
     
-    
-    
+    private void dj(List<Article> re,int userid,List<Article> replace) {
+    	Map<String,Object> temp2=new HashMap<String, Object>();
+        for(int i=0;i<re.size();i++)
+        {
+      	  temp2.clear();
+      	  temp2.put("type", Result.ZAN);
+      	  temp2.put("articleid", re.get(i).getId());
+      	  temp2.put("userid",userid);
+      	  if(shipMapper.findshipcount(temp2)>0)
+      		  re.get(i).setFzan(true);
+      	  replace.add(re.get(i));
+      	  List<Article> d=articleMapper.findreplace(re.get(i).getId());
+      	  if(d.size()>0)
+      	  dj(d,userid,replace);
+        }
+		
+	}
+
+
+	//小程序回复文章或者回复回复的方法
+    @RequestMapping("wx/replace")
+    public void wxreplace(HttpServletResponse rep,int aid,int uid,String title,int typ){
+    	   Article a=new Article();
+    	   a.setParent(aid);
+    	   a.setUserid(uid);
+    	   a.setTitle(title);
+    	   a.setType(typ);
+    	   a.setTime(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+    	   if(typ==Result.REPLACE)
+    		   a.setText("楼主");
+    	   if(typ==Result.REPLACE_REPLACE)
+    	   {
+    		   a.setText(articleMapper.findbyid(aid).getTitle());
+    	   }
+    	   int rs=Result.SUCCESS;
+    	   try {
+			articleMapper.insert(a);
+		} catch (Exception e) {
+			rs=Result.ERROR;
+			e.printStackTrace();
+		}
+    	AjaxUtil.Print(rep, rs+"");
+    }
+    //将时间转换的方法
     public void settime(List<Article> list){
     	SimpleDateFormat sf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     	for(int i=0;i<list.size();i++)
@@ -303,13 +359,17 @@ public class ArticleController {
 				long fb=sf.parse(list.get(i).getTime()).getTime();
 				long cha=now-fb;
 				int c=(int) (cha/1000/60/60);
-				if(c<24)
+				
+				if(c<24&&c>1)
 				{
 					list.get(i).setTime(c+"小时前");
 				}else if(c>=24)
 				{
-					int day=c%24;
-					list.get(i).setTime(day+"天前");
+					int day=c/24;
+					list.get(i).setTime(++day+"天前");
+				}else if(c<1&&c>0){
+					int m=c*60;
+					list.get(i).setTime(++m+"分钟前");				
 				}
 			} catch (ParseException e) {
 				e.printStackTrace();

@@ -58,8 +58,8 @@
   </select>
   <select id="findreplace" resultMap="ResultMapWithBLOBs" parameterType="int">
       select * from article
-      where type=2 and parent=#{id}
-      order by time desc
+      where (type=2 or type=3) and parent=#{id}
+      order by time 
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from article

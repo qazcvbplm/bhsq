@@ -40,9 +40,30 @@ public class Article implements Serializable{
     
     private int zan;
     
+    private boolean fzan=false;
+    
+    private List<Article> rtr=new ArrayList<Article>();
     
     
-    public int getZan() {
+    
+    
+    public List<Article> getRtr() {
+		return rtr;
+	}
+
+	public void setRtr(List<Article> rtr) {
+		this.rtr = rtr;
+	}
+
+	public boolean isFzan() {
+		return fzan;
+	}
+
+	public void setFzan(boolean fzan) {
+		this.fzan = fzan;
+	}
+
+	public int getZan() {
 		return zan;
 	}
 
