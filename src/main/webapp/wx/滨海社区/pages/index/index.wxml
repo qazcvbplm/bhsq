@@ -127,7 +127,7 @@
 
 <swiper-item>
 <block wx:for="{{dj}}">
-<view class="talkings"> 
+<view class="talkings" bindtap="information" id="{{item.id}}" > 
 <image class="talkingsImg" mode="scaleToFill" src="{{item.timage[0]}}"></image>
 <text>\n{{item.title}}</text>
 <text style="color: #666666">\n{{item.replace}}讨论|{{item.visitor}}围观</text>

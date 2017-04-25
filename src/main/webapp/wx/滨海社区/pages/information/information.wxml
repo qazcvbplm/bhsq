@@ -129,15 +129,17 @@
 </view>
 <!--end headImgRightTop-->
 <view class="commentText clear">
-<text>{{item.title}}</text>
+<view class="huifu">回复:{{item.text}}</view>
+<view>{{item.title}}</view>
 </view>
 <!--end commentText-->
 <view class="headImgRightFoot">
 <view class="commentTime fl">{{item.time}}</view>
 <view class="commentTimeRight fr">
-<image style="width:39rpx;height:39rpx;padding-right:5rpx;" src="/images/praise.jpg"></image>
+<image bindtap="fzan" data-in="{{index}}" id="{{item.id}}"  wx:if="{{item.fzan}}" style="width:39rpx;height:39rpx;padding-right:5rpx;" src="/images/zhan2.jpg"></image>
+<image bindtap="fzan"  data-in="{{index}}" id="{{item.id}}"  wx:if="{{!item.fzan}}" style="width:39rpx;height:39rpx;padding-right:5rpx;" src="/images/praise.jpg"></image>
 <text>{{item.zan}}</text>
-<image bindtap="commentSuccess" style="width:33rpx;height:29rpx;padding:0 28rpx" src="/images/commentImg.jpg"></image>
+<image bindtap="rep2"  data-in="{{index}}" style="width:33rpx;height:29rpx;padding:0 28rpx" src="/images/commentImg.jpg"></image>
 <text bindtap="reportSuccess">·举报</text>
 </view>
 <!--end commentTimeRight-->

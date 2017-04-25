@@ -86,10 +86,17 @@ Page({
   },   
   //跳转到商业资讯
   information:function(e){
+    if(app.globalData.UID==0)
+    {
+          wx.showToast({
+            icon:'loading',
+          })
+    }else{
     wx.navigateTo({
       url: '/pages/information/information?id='+e.currentTarget.id,
      
     })
+    }
   },
   //跳转到8个列表的详情页
   brokeNews:function(e){
@@ -172,7 +179,7 @@ Page({
                // success
                if(res.data.id)
                {
-                 app.globalData.UID=res.data.id;
+                  app.globalData.UID=res.data.id;
                   app.globalData.qd=res.data.qd;
                   that.setData({
                     qd:res.data.qd

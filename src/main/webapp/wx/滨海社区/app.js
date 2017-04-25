@@ -9,8 +9,8 @@ App({
   
   globalData:{
      userInfo:null,
-     IP:'http://127.0.0.1:8080/bhsq/wx/',
-     url:'http://127.0.0.1:8080/bhsq/',
+     IP:'http://192.168.1.114:8080/bhsq/wx/',
+     url:'http://192.168.1.114:8080/bhsq/',
      url2:'http://112.74.110.66:8080/upload/',
      UID:0,
      qd:true

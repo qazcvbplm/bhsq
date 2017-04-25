@@ -8,7 +8,7 @@
 </view>
 <!--end joinTitle-->
 <view class="joinText">
-<textarea  placeholder="欢迎有态度的评论，但是有态度不代表不友善哦~！" maxlength="-1" />
+<textarea bindinput="detail" value="{{title}}" placeholder="欢迎有态度的评论，但是有态度不代表不友善哦~！" maxlength="-1" />
 </view>
 <!--end joinText-->
 </view>
